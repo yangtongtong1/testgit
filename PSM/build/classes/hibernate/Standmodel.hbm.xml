@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-13 0:57:25 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Standmodel" table="standmodel" catalog="psm" optimistic-lock="version">
+         <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="one" type="string">
+            <column name="one" length="200" />
+        </property>
+        <property name="two" type="string">
+            <column name="two" length="200" />
+        </property>
+        <property name="three" type="string">
+            <column name="three" length="200" />
+        </property>
+        <property name="modelname" type="string">
+            <column name="modelname" length="500" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

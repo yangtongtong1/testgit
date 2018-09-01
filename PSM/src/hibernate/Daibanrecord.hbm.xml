@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-23 14:36:41 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Daibanrecord" table="daibanrecord" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="holiday" type="string">
+            <column name="holiday" length="20">
+                <comment>&#189;&#218;&#188;&#217;&#200;&#213;</comment>
+            </column>
+        </property>
+        <property name="ondutytime" type="date">
+            <column name="ondutytime" length="10" />
+        </property>
+        <property name="ondutyperson" type="string">
+            <column name="ondutyperson" length="20" />
+        </property>
+        <property name="nextperson" type="string">
+            <column name="nextperson" length="20" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

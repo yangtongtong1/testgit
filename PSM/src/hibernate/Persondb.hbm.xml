@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-3 16:20:41 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Persondb" table="persondb" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="ptype" type="string">
+            <column name="PType" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="10" />
+        </property>
+        <property name="sex" type="string">
+            <column name="Sex" length="5" />
+        </property>
+        <property name="idcard" type="string">
+            <column name="IDCard" length="18" />
+        </property>
+        <property name="birthday" type="string">
+            <column name="Birthday" />
+        </property>
+        <property name="phone" type="string">
+            <column name="Phone" length="11" />
+        </property>
+        <property name="phoneUrgent" type="string">
+            <column name="PhoneUrgent" />
+        </property>
+        <property name="papersType" type="string">
+            <column name="PapersType" />
+        </property>
+        <property name="papersNo" type="string">
+            <column name="PapersNo" />
+        </property>
+        <property name="papersDate" type="date">
+            <column name="PapersDate" length="10" />
+        </property>
+        <property name="userPwd" type="string">
+            <column name="UserPwd" />
+        </property>
+        <property name="papersTypeTwo" type="string">
+            <column name="PapersTypeTwo" />
+        </property>
+        <property name="papersNoTwo" type="string">
+            <column name="PapersNoTwo" />
+        </property>
+        <property name="papersDateTwo" type="date">
+            <column name="PapersDateTwo" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

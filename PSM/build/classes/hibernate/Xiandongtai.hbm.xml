@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-4-23 10:47:01 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Xiandongtai" table="xiandongtai" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="repoter" type="string">
+            <column name="repoter" length="50" />
+        </property>
+        <property name="peixun" type="string">
+            <column name="peixun" length="20" />
+        </property>
+        <property name="gangwei" type="string">
+            <column name="gangwei" length="20" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="20" />
+        </property>
+        <property name="sfz" type="string">
+            <column name="sfz" length="20">
+                <comment>&#201;&#237;&#183;&#221;&#214;&#164;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="10" />
+        </property>
+        <property name="intimeplan" type="date">
+            <column name="intimeplan" length="10" />
+        </property>
+        <property name="intimereal" type="string">
+            <column name="intimereal" length="20" />
+        </property>
+        <property name="lvetimeplan" type="date">
+            <column name="lvetimeplan" length="10" />
+        </property>
+        <property name="lvetimereal" type="string">
+            <column name="lvetimereal" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="15" />
+        </property>
+        <property name="istijian" type="string">
+            <column name="istijian" length="10" />
+        </property>
+        <property name="isgsbx" type="string">
+            <column name="isgsbx" length="10" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

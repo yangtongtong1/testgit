@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-4-24 15:12:48 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Saveenergyjc" table="saveenergyjc" catalog="psm" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="year" type="string">
+            <column name="year" length="20" />
+        </property>
+        <property name="season" type="string">
+            <column name="season" length="20" />
+        </property>
+        <property name="elec" type="string">
+            <column name="elec" length="20" />
+        </property>
+        <property name="gas" type="string">
+            <column name="gas" length="20" />
+        </property>
+        <property name="hgas" type="string">
+            <column name="hgas" length="20" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="20" />
+        </property>
+        <property name="ngas" type="string">
+            <column name="ngas" length="20" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-16 14:50:08 by Hibernate Tools 5.1.2.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Testrecord" table="testrecord" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="50" />
+        </property>
+        <property name="belongTo" type="string">
+            <column name="BelongTo" length="150" />
+        </property>
+        <property name="questionIdlist1" type="string">
+            <column name="QuestionIDList1" length="150" />
+        </property>
+        <property name="questionScore1" type="java.lang.Integer">
+            <column name="QuestionScore1" />
+        </property>
+        <property name="questionIdlist2" type="string">
+            <column name="QuestionIDList2" length="150" />
+        </property>
+        <property name="questionScore2" type="java.lang.Integer">
+            <column name="QuestionScore2" />
+        </property>
+        <property name="questionIdlist3" type="string">
+            <column name="QuestionIDList3" length="150" />
+        </property>
+        <property name="questionScore3" type="java.lang.Integer">
+            <column name="QuestionScore3" />
+        </property>
+        <property name="questionIdlist4" type="string">
+            <column name="QuestionIDList4" length="150" />
+        </property>
+        <property name="questionScore4" type="java.lang.Integer">
+            <column name="QuestionScore4" />
+        </property>
+    </class>
+</hibernate-mapping>

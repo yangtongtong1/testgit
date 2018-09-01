@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-18 16:10:08 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Periodreport" table="periodreport" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="year" type="java.lang.Integer">
+            <column name="Year" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="Month" />
+        </property>
+        <property name="week" type="java.lang.Integer">
+            <column name="Week" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="63" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#177;&#168;&#203;&#205;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

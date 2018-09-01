@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 14:34:12 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Saftycheck" table="saftycheck" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="checktime" type="date">
+            <column name="checktime" length="10" />
+        </property>
+        <property name="checktype" type="string">
+            <column name="checktype" length="50" />
+        </property>
+        <property name="checkunit" type="string">
+            <column name="checkunit" length="50" />
+        </property>
+        <property name="shoujianunit" type="string">
+            <column name="shoujianunit" length="50" />
+        </property>
+        <property name="checkperson" type="string">
+            <column name="checkperson" length="50" />
+        </property>
+        <property name="noticeandnum" type="string">
+            <column name="noticeandnum" length="100" />
+        </property>
+        <property name="pronum" type="java.lang.Integer">
+            <column name="pronum" />
+        </property>
+        <property name="prokind" type="string">
+            <column name="prokind" length="200" />
+        </property>
+        <property name="prodegree" type="string">
+            <column name="prodegree" length="100" />
+        </property>
+        <property name="problem" type="string">
+            <column name="problem" length="500" />
+        </property>
+        <property name="advice" type="string">
+            <column name="advice" length="500" />
+        </property>
+        <property name="advicenum" type="java.lang.Integer">
+            <column name="advicenum" />
+        </property>
+        <property name="timeline" type="date">
+            <column name="timeline" length="10" />
+        </property>
+        <property name="iscorrective" type="string">
+            <column name="iscorrective" length="10" />
+        </property>
+        <property name="replytime" type="date">
+            <column name="replytime" length="10" />
+        </property>
+        <property name="replyandnum" type="string">
+            <column name="replyandnum" length="100" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="accessory2" type="string">
+            <column name="Accessory2" length="500" />
+        </property>
+        <property name="last" type="string">
+            <column name="last" length="500" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50" />
+        </property>
+        <property name="replyandver" type="string">
+            <column name="replyandver" length="100" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 17:03:10 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Weixianyuan" table="weixianyuan" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="jobActivity" type="string">
+            <column name="JobActivity">
+                <comment>&#215;&#247;&#210;&#181;</comment>
+            </column>
+        </property>
+        <property name="badFactor" type="string">
+            <column name="BadFactor">
+                <comment>&#206;&#163;&#207;&#213;&#163;&#168;&#212;&#180;&#163;&#169;&#211;&#208;&#186;&#166;&#210;&#242;&#203;&#216;</comment>
+            </column>
+        </property>
+        <property name="badEvent" type="string">
+            <column name="BadEvent">
+                <comment>&#191;&#201;&#196;&#220;&#181;&#188;&#214;&#194;&#181;&#196;&#201;&#203;&#186;&#166;&#168;M&#202;&#194;&#185;&#202;</comment>
+            </column>
+        </property>
+        <property name="rank" type="string">
+            <column name="Rank" length="20">
+                <comment>&#183;&#231;&#207;&#213;</comment>
+            </column>
+        </property>
+        <property name="controlAction" type="string">
+            <column name="ControlAction" length="500">
+                <comment>&#191;&#216; &#214;&#198; &#180;&#235; &#202;&#169;</comment>
+            </column>
+        </property>
+        <property name="yijian" type="string">
+            <column name="Yijian" length="500" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        
+         <property name="jobTime" type="date">
+            <column name="jobTime" length="10" />
+        </property>
+        
+        <property name="jobLocation" type="string">
+            <column name="jobLocation" length="200" />
+        </property>
+        
+        <property name="jobContent" type="string">
+            <column name="jobContent" length="200" />
+        </property>
+        
+        <property name="mainRisk" type="string">
+            <column name="mainRisk" length="200" />
+        </property>
+        
+        <property name="riskRank" type="string">
+            <column name="riskRank" length="200" />
+        </property>
+        
+        <property name="preAction" type="string">
+            <column name="preAction" length="200" />
+        </property>
+        
+        <property name="jobMan" type="string">
+            <column name="jobMan" length="200" />
+        </property>
+        
+        <property name="jobJiandu" type="string">
+            <column name="jobJiandu" length="200" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

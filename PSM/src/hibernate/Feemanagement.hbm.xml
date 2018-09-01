@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-10 17:33:04 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Feemanagement" table="feemanagement" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="typei" type="string">
+            <column name="Typei" length="20">
+                <comment>&#183;&#209;&#211;&#195;&#183;&#214;&#192;&#224;</comment>
+            </column>
+        </property>
+        <property name="unit" type="string">
+            <column name="Unit" length="20">
+                <comment>&#202;&#185;&#211;&#195;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="fee" type="string">
+            <column name="Fee" length="20">
+                <comment>&#189;&#240;&#182;&#238;&#163;&#168;&#212;&#170;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="usea" type="string">
+            <column name="Usea" length="20">
+                <comment>&#183;&#209;&#211;&#195;&#211;&#195;&#205;&#190;</comment>
+            </column>
+        </property>
+        <property name="jperson" type="string">
+            <column name="Jperson" length="20">
+                <comment>&#190;&#173;&#176;&#236;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="dperson" type="string">
+            <column name="Dperson" length="20">
+                <comment>&#181;&#199;&#188;&#199;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#201;&#243;&#197;&#250;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="Content" length="100">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="Title" length="20" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

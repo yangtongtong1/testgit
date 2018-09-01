@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-28 15:41:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.EnviromentPro" table="enviromentpro" catalog="psm">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="Department" />
+        </property>
+        <property name="time" type="java.lang.String">
+            <column name="Time" />
+        </property>
+        <property name="approval" type="java.lang.String">
+            <column name="Approval" />
+        </property>
+        <property name="accessory" type="java.lang.String">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

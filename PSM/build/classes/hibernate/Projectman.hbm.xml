@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-4 16:27:46 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Projectman" table="projectman" catalog="psm" optimistic-lock="version">
+        <id name="userName" type="string">
+            <column name="UserName" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="userPwd" type="string">
+            <column name="UserPwd" length="200" not-null="true" />
+        </property>
+        <property name="uuid" type="string">
+            <column name="UUID" length="800" />
+        </property>
+    </class>
+</hibernate-mapping>

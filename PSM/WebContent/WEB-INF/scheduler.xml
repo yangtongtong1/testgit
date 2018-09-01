@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">  
+<beans>
+
+	<!-- 配置数据源 -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://125.220.159.160:3306/psm?useUnicode=true&amp;characterEncoding=utf8"></property>   
+		<property name="username" value="root"></property>
+		<property name="password" value="rat605"></property>
+		<property name="maxActive" value="500"></property>
+		<property name="maxIdle" value="100"></property>
+		<property name="maxWait" value="10000" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="60" />
+        <property name="logAbandoned" value="true" />
+        <property name="validationQuery" value="select 1" />
+	</bean>
+	
+	
+	<!-- 定义Hibernate的sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- 数据库连接方言 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<!-- 在控制台输出SQL语句 -->
+				<prop key="hibernate.show_sql">false</prop>
+				<!-- 格式化控制台输出的SQL语句 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+			</props>
+		</property>
+		<!--Hibernate映射文件 -->
+		<property name="mappingLocations">
+			<value>classpath:/hibernate/*.hbm.xml</value>
+		</property>
+	</bean>
+	
+	<bean id="task1" class="PSM.Tool.ScheduledTask1">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+    </bean>
+    
+    <bean id="task2" class="PSM.Tool.ScheduledTask2">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+    </bean>
+	
+	
+    <!-- 定时扫描周期,如果已到期,则结束周期 -->  
+    <!-- 定时服务定义 -->     
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">     
+        <!-- 自动启动 -->     
+        <property name="autoStartup">     
+            <value>true</value>     
+        </property>     
+        <property name="triggers">     
+            <list>   
+                <ref local="trigger1"/>
+                <ref local="trigger2"/>
+            </list>     
+        </property>     
+    </bean>   
+    <bean id="trigger1" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail">     
+            <ref bean="jobDetail1"/>     
+        </property>     
+        <property name="cronExpression">     
+            <!-- 每月1日早上10点执行 -->     
+            <value>0 0 10 1 1/1 ? *</value>     
+        </property>   
+    </bean>
+    <bean id="trigger2" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail">     
+            <ref bean="jobDetail2"/>     
+        </property>     
+        <property name="cronExpression">     
+            <!-- 每日早上9点执行 -->     
+            <value>0 0 9 1/1 1/1 ? *</value>
+        </property>   
+    </bean>      
+    <bean id="jobDetail1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject">  
+            <ref bean="task1"/>  
+        </property>     
+        <property name="targetMethod">  
+            <value>test</value>  
+        </property>
+        <property name="concurrent" value="false"/>    
+    </bean>
+    <bean id="jobDetail2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject">  
+            <ref bean="task2"/>  
+        </property>     
+        <property name="targetMethod">  
+            <value>test</value>  
+        </property>
+        <property name="concurrent" value="false"/>    
+    </bean>
+    
+    
+    
+    
+</beans>

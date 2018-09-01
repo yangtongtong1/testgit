@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-13 17:12:05 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Commonfile" table="commonfile" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="200">
+                <comment>&#214;&#198;&#182;&#200;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="fromUnit" type="string">
+            <column name="FromUnit" length="100">
+                <comment>&#183;&#162;&#178;&#188;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="no" type="string">
+            <column name="No" length="20">
+                <comment>&#206;&#196;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.ODHequipment" table="odhequipment" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="model" type="string">
+            <column name="Model" />
+        </property>
+        <property name="department" type="string">
+            <column name="Department" />
+        </property>
+        <property name="num" type="string">
+            <column name="Num" />
+        </property>
+        <property name="buyTime" type="string">
+            <column name="BuyTime" />
+        </property>
+        <property name="serialNumber" type="string">
+            <column name="SerialNumber" />
+        </property>
+        <property name="place" type="string">
+            <column name="Place" />
+        </property>
+        <property name="responsibility" type="string">
+            <column name="Responsibility" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

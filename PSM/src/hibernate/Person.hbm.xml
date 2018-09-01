@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-28 9:59:26 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Person" table="person" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="10" />
+        </property>
+        <property name="unitName" type="string">
+            <column name="UnitName" length="20" />
+        </property>
+        <property name="job" type="string">
+            <column name="Job" length="50" />
+        </property>
+        <property name="identityNo" type="string">
+            <column name="IdentityNo" length="18" />
+        </property>
+        <property name="phoneNo" type="string">
+            <column name="PhoneNo" length="11" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="10" />
+        </property>
+        <property name="userPwd" type="string">
+            <column name="UserPwd" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-11 16:29:17 by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Multimediafile" table="multimediafile" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="uploadDate" type="timestamp">
+            <column name="UploadDate" length="19">
+                <comment>&#201;&#207;&#180;&#171;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="100">
+                <comment>&#178;&#203;&#181;&#165;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

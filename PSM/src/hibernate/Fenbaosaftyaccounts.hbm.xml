@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 10:34:07 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Fenbaosaftyaccounts" table="fenbaosaftyaccounts" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="subcontractor" type="string">
+            <column name="subcontractor" length="50" />
+        </property>
+        <property name="taizhang" type="string">
+            <column name="taizhang" length="50" />
+        </property>
+        <property name="checktime" type="date">
+            <column name="checktime" length="10" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="costkind" type="string">
+            <column name="costkind" length="50" />
+        </property>
+        <property name="costetails" type="string">
+            <column name="costetails" length="65535" />
+        </property>
+        <property name="amount" type="string">
+            <column name="amount" length="50" />
+        </property>
+        <property name="reportor" type="string">
+            <column name="reportor" length="50" />
+        </property>
+        <property name="register" type="string">
+            <column name="register" length="50" />
+        </property>
+        <property name="approver" type="string">
+            <column name="approver" length="50" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="65535" />
+        </property>
+        <property name="registertime" type="date">
+            <column name="registertime" length="10" />
+        </property>
+        <property name="checksituation" type="string">
+            <column name="checksituation" length="65535" />
+        </property>
+        <property name="checkperson" type="string">
+            <column name="checkperson" length="65535" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated 2017-10-14 16:40:27 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="psm" dynamic-insert="false" dynamic-update="false" mutable="true" name="hibernate.Goaldecom" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="goaldecom">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="target" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Target">
+  
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="goalDecom" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="GoalDecom">
+                <comment>��Ŀ��Ŀ��ֽ�</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="indexValue" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="IndexValue">
+                <comment>ָ��ֵ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="factor" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Factor">
+                <comment>�漰����ҪΣ��Դ/��������</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="quaSave" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="QuaSave">
+                <comment>������ȫ��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="design" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Design">
+                <comment>��Ʋ�</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="engineer" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Engineer"/>
+        </property>
+        <property generated="never" lazy="false" name="affair" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Affair"/>
+        </property>
+        <property generated="never" lazy="false" name="buy" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Buy"/>
+        </property>
+        <property generated="never" lazy="false" name="makeOne" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="MakeOne">
+                <comment>�ƶ���</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="examineOne" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="ExamineOne">
+                <comment>�����</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="agreeOne" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="AgreeOne">
+                <comment>��׼��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="signOne" optimistic-lock="true" type="string" unique="false">
+            <column name="SignOne">
+                <comment>��ǩ��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="content" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Content">
+                <comment>Ŀ������</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="mvalue" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="Mvalue">
+                <comment>Ŀ��ֵ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="measure" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Measure">
+                <comment>ʵʩ��ʩ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="time" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Time">
+                <comment>���ʱ��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="manager" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Manager">
+                <comment>������</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="completed" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Completed">
+                <comment>������</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="projectName" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="ProjectName"/>
+        </property>
+        <property generated="never" lazy="false" name="accessory" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Accessory">
+                <comment>����</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

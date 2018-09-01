@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-20 10:10:42 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Exemplaryfile" table="exemplaryfile" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="no" type="string">
+            <column name="No" length="20" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="200" />
+        </property>
+        <property name="fromUnit" type="string">
+            <column name="FromUnit" length="100" />
+        </property>
+        <property name="howFast" type="string">
+            <column name="HowFast" length="100" />
+        </property>
+        <property name="fileRequire" type="string">
+            <column name="FileRequire" length="200" />
+        </property>
+        <property name="writeOpinion" type="string">
+            <column name="WriteOpinion" length="500" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

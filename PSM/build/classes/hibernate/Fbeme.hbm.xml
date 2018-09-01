@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-9 20:18:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Fbeme" table="fbeme" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="20">
+                <comment>&#183;&#214;&#176;&#252;&#183;&#189;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="ename" type="string">
+            <column name="Ename" length="20">
+                <comment>
+                &#211;&#166;&#188;&#177;&#212;&#164;&#176;&#184;/&#207;&#214;&#179;&#161;&#180;&#166;&#214;&#195;&#183;&#189;&#176;&#184;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#177;&#168;&#177;&#184;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="person" type="string">
+            <column name="Person" length="20">
+                <comment>&#201;&#243;&#178;&#233;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="result" type="string">
+            <column name="Result" length="20">
+                <comment>&#201;&#243;&#178;&#233;&#189;&#225;&#185;&#251;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

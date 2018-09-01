@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-31 16:33:52 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Saveprodbook" table="saveprodbook" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="Type" length="10">
+                <comment>
+                &#212;&#240;&#200;&#206;&#202;&#233;&#192;&#224;&#177;&#240;&#163;&#168;&#212;&#186;&#188;&#182;&#161;&#162;&#207;&#238;&#196;&#191;&#188;&#182;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="timeYear" type="string">
+            <column name="TimeYear" length="10">
+                <comment>&#196;&#234;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="toTarget" type="string">
+            <column name="ToTarget" length="10">
+                <comment>
+                &#199;&#169;&#182;&#169;&#182;&#212;&#207;&#243;&#163;&#168;&#201;&#232;&#188;&#198;&#212;&#186;&#161;&#162;&#183;&#214;&#176;&#252;&#181;&#165;&#206;&#187;&#195;&#251;&#179;&#198;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        <property name="uploadTime" type="timestamp">
+            <column name="UploadTime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

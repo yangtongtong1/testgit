@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-7 16:44:39 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Yinhuanpaicha" table="yinhuanpaicha" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="hiddenTrouble" type="string">
+            <column name="HiddenTrouble">
+                <comment>&#180;&#230;&#212;&#218;&#181;&#196;&#176;&#178;&#200;&#171;&#210;&#254;&#187;&#188;</comment>
+            </column>
+        </property>
+        <property name="place" type="string">
+            <column name="Place" length="20">
+                <comment>&#210;&#254;&#187;&#188;&#180;&#230;&#212;&#218;&#181;&#216;&#181;&#227;</comment>
+            </column>
+        </property>
+        <property name="findMan" type="string">
+            <column name="FindMan" length="20">
+                <comment>&#183;&#162;&#207;&#214;&#200;&#203;&#163;&#168;&#178;&#191;&#195;&#197;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="rank" type="string">
+            <column name="Rank" length="10">
+                <comment>&#210;&#254;&#187;&#188;&#182;&#168;&#188;&#182;</comment>
+            </column>
+        </property>
+        <property name="action" type="string">
+            <column name="Action">
+                <comment>&#213;&#251;&#184;&#196;&#180;&#235;&#202;&#169;</comment>
+            </column>
+        </property>
+        <property name="unit" type="string">
+            <column name="Unit" length="20">
+                <comment>&#212;&#240;&#200;&#206;&#178;&#191;&#195;&#197;/&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="inChargeMan" type="string">
+            <column name="InChargeMan" length="20">
+                <comment>&#212;&#240;&#200;&#206;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="planTime" type="date">
+            <column name="PlanTime" length="10">
+                <comment>&#188;&#198;&#187;&#174;&#205;&#234;&#179;&#201;&#213;&#251;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="cost" type="big_decimal">
+            <column name="Cost" precision="10" />
+        </property>
+        <property name="realTime" type="date">
+            <column name="RealTime" length="10">
+                <comment>
+                &#213;&#251;&#184;&#196;&#205;&#234;&#179;&#201;&#199;&#233;&#191;&#246;&#188;&#176;&#202;&#181;&#188;&#202;&#205;&#234;&#179;&#201;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="supervisor" type="string">
+            <column name="Supervisor" length="20">
+                <comment>&#188;&#224;&#182;&#189;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="preventAction" type="string">
+            <column name="PreventAction">
+                <comment>&#206;&#180;&#205;&#234;&#179;&#201;&#213;&#251;&#184;&#196;&#181;&#196;&#212;&#164;&#183;&#192;&#180;&#235;&#202;&#169;</comment>
+            </column>
+        </property>
+        <property name="fileNo" type="java.lang.Integer">
+            <column name="FileNo">
+                <comment>&#213;&#251;&#184;&#196;&#187;&#216;&#184;&#180;&#178;&#196;&#193;&#207;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

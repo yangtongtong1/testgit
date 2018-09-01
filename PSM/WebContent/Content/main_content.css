@@ -1,0 +1,96 @@
+﻿/*----------------------------------------------------
+    EXTJS  Tree Panel
+*/
+.x-grid-tree-node-expanded .x-tree-icon-parent
+{
+    background-image: url(../images/ims/tree/folder_open.png);
+}
+
+.x-tree-icon-leaf
+{
+    background-image: url(../images/ims/tree/leafIcon.png);
+}
+
+.x-tree-icon-parent
+{
+    background-image: url(../images/ims/tree/folder.png);
+}
+
+.x-tree-panel .x-grid-cell-inner {    
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/*----------------------------------------------------
+    EXTJS  Grid Panel
+*/
+.x-column-header-align-left 
+{
+    text-align: center;
+}
+
+/*----------------------------------------------------
+    Toolbar
+*/
+.add
+{
+    background-image: url(../images/ims/toolbar/add.gif) !important;
+}
+
+.edit
+{
+    background-image: url(../images/ims/toolbar/edit.png) !important;
+}
+
+.remove
+{
+    background-image: url(../images/ims/toolbar/delete.gif) !important;
+}
+
+.restore
+{
+    background-image: url(../images/ims/toolbar/restore.gif) !important;
+}
+
+.download
+{
+    background-image: url(../images/ims/toolbar/download.png) !important;
+}
+
+.upload
+{
+    background-image: url(../images/ims/toolbar/upload.png) !important;
+}
+
+.search
+{
+    background-image: url(../images/ims/toolbar/search.png) !important;
+}
+
+.refresh
+{
+    background-image: url(../images/ims/toolbar/refresh.png) !important;
+}
+
+.extexcel
+{
+    background-image: url(../images/ims/toolbar/extexcel.png) !important;
+}
+
+.lock
+{
+    background-image: url(../images/ims/toolbar/lock.png) !important;
+}
+.unlock
+{
+    background-image: url(../images/ims/toolbar/unlock.png) !important;
+}
+.group
+{
+    background-image: url(../images/ims/toolbar/group.png) !important;
+}
+.change
+{
+    background-image: url(../images/ims/toolbar/change.png) !important;
+}
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated 2017-10-13 17:10:25 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="psm" dynamic-insert="false" dynamic-update="false" mutable="true" name="hibernate.Yearplan" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="yearplan">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="year" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="Year">
+   
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="workload" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Workload">
+                <comment>��ص�λ</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="completed" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Completed">
+                <comment>������˵��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="content" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Content">
+                <comment>�ƻ�����</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="contentNum" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="ContentNum">
+                <comment>��������</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="manager" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Manager">
+                <comment>���β���</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="planDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="PlanDate">
+                <comment>�ƻ����ʱ��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="realDate" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="RealDate">
+                <comment>ʵ�����ʱ��</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="accessory" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Accessory">
+                <comment>�����֤����</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="no" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="No">
+                <comment>?��??</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="projectName" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="ProjectName"/>
+        </property>
+    </class>
+</hibernate-mapping>

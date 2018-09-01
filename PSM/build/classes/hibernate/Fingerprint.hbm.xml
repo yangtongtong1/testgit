@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-12 10:13:48 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Fingerprint" table="fingerprint" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="20">
+                <comment>&#188;&#224;&#191;&#216;&#181;&#227;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="ip" type="string">
+            <column name="Ip" length="20">
+                <comment>ip</comment>
+            </column>
+        </property>
+        <property name="portno" type="string">
+            <column name="Portno" length="10">
+                <comment>&#182;&#203;&#191;&#218;&#186;&#197;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

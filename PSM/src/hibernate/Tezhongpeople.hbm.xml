@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Tezhongpeople" table="tezhongpeople" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fbName" type="string">
+            <column name="fbName" length="10">
+                <comment>&#183;&#214;&#176;&#252;&#181;&#165;&#206;&#187;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="10">
+                <comment>&#184;&#218;&#206;&#187;/&#185;&#164;&#214;&#214;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="10" />
+        </property>
+        <property name="sex" type="string">
+            <column name="Sex" length="5" />
+        </property>
+        <property name="cardName" type="string">
+            <column name="CardName" length="15">
+                <comment>&#214;&#164;&#188;&#254;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="cardTime" type="date">
+            <column name="CardTime" length="10" />
+        </property>
+        <property name="useTime" type="date">
+            <column name="UseTime" length="10" />
+        </property>
+        <property name="cardNo" type="string">
+            <column name="CardNo" length="20" />
+        </property>
+        <property name="ps" type="string">
+            <column name="Ps" length="200">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="peixun" type="string">
+            <column name="Peixun" length="20" />
+        </property>
+        <property name="cardPlace" type="string">
+            <column name="CardPlace" length="15">
+                <comment>&#183;&#162;&#214;&#164;&#187;&#250;&#185;&#216;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

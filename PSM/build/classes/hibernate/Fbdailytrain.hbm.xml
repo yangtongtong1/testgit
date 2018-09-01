@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 17:15:04 by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Fbdailytrain" table="fbdailytrain" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fenbao" type="string">
+            <column name="fenbao">
+                <comment>&#177;&#168;&#177;&#184;&#183;&#214;&#176;&#252;&#183;&#189;</comment>
+            </column>
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19">
+                <comment>&#197;&#224;&#209;&#181;&#189;&#225;&#202;&#248;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19">
+                <comment>&#197;&#224;&#209;&#181;&#191;&#170;&#202;&#188;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="time" type="java.lang.Integer">
+            <column name="time">
+                <comment>&#197;&#224;&#209;&#181;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="registDate" type="timestamp">
+            <column name="regist_date" length="19">
+                <comment>&#181;&#199;&#188;&#199;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="record" type="string">
+            <column name="record">
+                <comment>&#197;&#224;&#209;&#181;&#188;&#199;&#194;&#188;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

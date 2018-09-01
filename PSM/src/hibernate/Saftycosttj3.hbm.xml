@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 10:34:07 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Saftycosttj3" table="saftycosttj3" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="year" type="string">
+            <column name="year" length="20" />
+        </property>
+        <property name="costkind0" type="string">
+            <column name="costkind0" length="50" />
+        </property>
+        <property name="costkind1" type="string">
+            <column name="costkind1" length="50" />
+        </property>
+        <property name="costkind2" type="string">
+            <column name="costkind2" length="50" />
+        </property>
+        <property name="costkind3" type="string">
+            <column name="costkind3" length="50" />
+        </property>
+        <property name="costkind4" type="string">
+            <column name="costkind4" length="50" />
+        </property>
+        <property name="costkind5" type="string">
+            <column name="costkind5" length="50" />
+        </property>
+        <property name="costkind6" type="string">
+            <column name="costkind6" length="50" />
+        </property>
+        <property name="costkind7" type="string">
+            <column name="costkind7" length="50" />
+        </property>
+        <property name="costkind8" type="string">
+            <column name="costkind8" length="50" />
+        </property>
+        <property name="costkind9" type="string">
+            <column name="costkind9" length="50" />
+        </property>
+        <property name="costkind01" type="string">
+            <column name="costkind01" length="50" />
+        </property>
+        <property name="costkind11" type="string">
+            <column name="costkind11" length="50" />
+        </property>
+        <property name="costkind21" type="string">
+            <column name="costkind21" length="50" />
+        </property>
+        <property name="costkind31" type="string">
+            <column name="costkind31" length="50" />
+        </property>
+        <property name="costkind41" type="string">
+            <column name="costkind41" length="50" />
+        </property>
+        <property name="costkind51" type="string">
+            <column name="costkind51" length="50" />
+        </property>
+        <property name="costkind61" type="string">
+            <column name="costkind61" length="50" />
+        </property>
+        <property name="costkind71" type="string">
+            <column name="costkind71" length="50" />
+        </property>
+        <property name="costkind81" type="string">
+            <column name="costkind81" length="50" />
+        </property>
+        <property name="costkind91" type="string">
+            <column name="costkind91" length="50" />
+        </property>
+        <property name="costkind02" type="string">
+            <column name="costkind02" length="50" />
+        </property>
+        <property name="costkind12" type="string">
+            <column name="costkind12" length="50" />
+        </property>
+        <property name="costkind22" type="string">
+            <column name="costkind22" length="50" />
+        </property>
+        <property name="costkind32" type="string">
+            <column name="costkind32" length="50" />
+        </property>
+        <property name="costkind42" type="string">
+            <column name="costkind42" length="50" />
+        </property>
+        <property name="costkind52" type="string">
+            <column name="costkind52" length="50" />
+        </property>
+        <property name="costkind62" type="string">
+            <column name="costkind62" length="50" />
+        </property>
+        <property name="costkind72" type="string">
+            <column name="costkind72" length="50" />
+        </property>
+        <property name="costkind82" type="string">
+            <column name="costkind82" length="50" />
+        </property>
+        <property name="costkind92" type="string">
+            <column name="costkind92" length="50" />
+        </property>
+        <property name="costkind03" type="string">
+            <column name="costkind03" length="50" />
+        </property>
+        <property name="costkind13" type="string">
+            <column name="costkind13" length="50" />
+        </property>
+        <property name="costkind23" type="string">
+            <column name="costkind23" length="50" />
+        </property>
+        <property name="costkind33" type="string">
+            <column name="costkind33" length="50" />
+        </property>
+        <property name="costkind43" type="string">
+            <column name="costkind43" length="50" />
+        </property>
+        <property name="costkind53" type="string">
+            <column name="costkind53" length="50" />
+        </property>
+        <property name="costkind63" type="string">
+            <column name="costkind63" length="50" />
+        </property>
+        <property name="costkind73" type="string">
+            <column name="costkind73" length="50" />
+        </property>
+        <property name="costkind83" type="string">
+            <column name="costkind83" length="50" />
+        </property>
+        <property name="costkind93" type="string">
+            <column name="costkind93" length="50" />
+        </property>
+        <property name="sum1" type="string">
+            <column name="sum1" length="20" />
+        </property>
+        <property name="sum2" type="string">
+            <column name="sum2" length="20" />
+        </property>
+        <property name="sum3" type="string">
+            <column name="sum3" length="20" />
+        </property>
+        <property name="sum4" type="string">
+            <column name="sum4" length="20" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Constructdesign" table="constructdesign" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="time" type="string">
+            <column name="Time" length="20">
+                <comment>&#201;&#232;&#188;&#198;&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="100">
+                <comment>&#202;&#169;&#185;&#164;&#215;&#233;&#214;&#175;&#201;&#232;&#188;&#198;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="unit" type="string">
+            <column name="Unit" length="100">
+                <comment>&#177;&#224;&#214;&#198;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#177;&#224;&#201;&#243;&#197;&#250;&#188;&#199;&#194;&#188;</comment>
+            </column>
+        </property>
+        <property name="no" type="string">
+            <column name="No" length="20">
+                <comment>?&#168;&#168;???&#168;&#176;??</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

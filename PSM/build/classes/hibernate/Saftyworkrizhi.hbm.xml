@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-29 16:51:41 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Saftyworkrizhi" table="saftyworkrizhi" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="rizhitime" type="date">
+            <column name="rizhitime" length="10" />
+        </property>
+        <property name="weekday" type="string">
+            <column name="weekday" length="10" />
+        </property>
+        <property name="qixiday" type="string">
+            <column name="qixiday" length="20" />
+        </property>
+        <property name="qixinight" type="string">
+            <column name="qixinight" length="20" />
+        </property>
+        <property name="degreeday" type="string">
+            <column name="degreeday" length="20" />
+        </property>
+        <property name="degreenight" type="string">
+            <column name="degreenight" length="20" />
+        </property>
+        <property name="windday" type="string">
+            <column name="windday" length="20" />
+        </property>
+        <property name="windnight" type="string">
+            <column name="windnight" length="20" />
+        </property>
+        <property name="rizhi" type="string">
+            <column name="rizhi" length="1000" />
+        </property>
+        <property name="workplan" type="string">
+            <column name="workplan" length="500" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

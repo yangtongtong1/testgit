@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-9 22:01:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Monitor" table="monitor" catalog="psm">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="monitorName" type="string">
+            <column name="MonitorName" length="50" />
+        </property>
+        <property name="longitude" type="java.lang.Double">
+            <column name="Longitude" precision="11" scale="6">
+                <comment>&#190;&#173;&#182;&#200;</comment>
+            </column>
+        </property>
+        <property name="latitude" type="java.lang.Double">
+            <column name="Latitude" precision="11" scale="6">
+                <comment>&#206;&#179;&#182;&#200;</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" length="30" />
+        </property>
+        <property name="userPwd" type="string">
+            <column name="UserPwd" length="30" />
+        </property>
+        <property name="ipaddress" type="string">
+            <column name="IPAddress" length="30" />
+        </property>
+        <property name="port" type="string">
+            <column name="Port" length="10" />
+        </property>
+        <property name="mobilePort" type="string">
+            <column name="MobilePort" length="10" />
+        </property>
+        <property name="channel" type="string">
+            <column name="Channel" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="300" />
+        </property>
+        <property name="defaultpos" type="java.lang.Integer">
+            <column name="defaultpos" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

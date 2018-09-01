@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-20 11:09:48 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Workplan" table="workplan" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="taskContent" type="string">
+            <column name="TaskContent" length="200">
+                <comment>&#200;&#206;&#206;&#241;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="dutyMan" type="string">
+            <column name="DutyMan" length="20">
+                <comment>&#212;&#240;&#200;&#206;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="taskScale" type="string">
+            <column name="TaskScale" length="50">
+                <comment>&#200;&#206;&#206;&#241;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="timeYear" type="date">
+            <column name="TimeYear" length="10" />
+        </property>
+        <property name="planFinishTime" type="date">
+            <column name="PlanFinishTime" length="10" />
+        </property>
+        <property name="realFinishTime" type="date">
+            <column name="RealFinishTime" length="10" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="10" />
+        </property>
+        <property name="finishedTask" type="string">
+            <column name="FinishedTask" length="200">
+                <comment>&#210;&#209;&#205;&#234;&#179;&#201;&#200;&#206;&#206;&#241;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

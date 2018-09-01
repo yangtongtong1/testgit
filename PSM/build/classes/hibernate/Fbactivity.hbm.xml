@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 17:15:04 by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Fbactivity" table="fbactivity" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="activityDate" type="timestamp">
+            <column name="activity_date" length="19" />
+        </property>
+        <property name="organization" type="string">
+            <column name="organization" />
+        </property>
+        <property name="theme" type="string">
+            <column name="theme" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

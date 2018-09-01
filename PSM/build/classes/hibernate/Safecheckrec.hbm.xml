@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 11:11:56 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Safecheckrec" table="safecheckrec" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="100" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="50" />
+        </property>
+        <property name="num" type="string">
+            <column name="Num" length="10" />
+        </property>
+        <property name="thisTime" type="date">
+            <column name="ThisTime" length="10" />
+        </property>
+        <property name="lastTime" type="date">
+            <column name="LastTime" length="10" />
+        </property>
+        <property name="agent" type="string">
+            <column name="Agent" length="20" />
+        </property>
+        <property name="registrant" type="string">
+            <column name="Registrant" length="20" />
+        </property>
+        <property name="other" type="string">
+            <column name="Other" length="500" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="tableId" type="string">
+            <column name="tableID" length="10" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

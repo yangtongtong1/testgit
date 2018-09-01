@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-19 10:22:30 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Safetypromanagement" table="safetypromanagement" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="20">
+                <comment>&#187;&#250;&#185;&#185;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#179;&#201;&#193;&#162;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="sperson" type="string">
+            <column name="Sperson" length="20" />
+        </property>
+        <property name="person" type="string">
+            <column name="Person" length="20">
+                <comment>&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

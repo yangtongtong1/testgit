@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-2 14:37:29 by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Testpaper" table="testpaper" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="testId" type="java.lang.Integer">
+            <column name="TestID" />
+        </property>
+        <property name="projectId" type="java.lang.Integer">
+            <column name="ProjectID" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="50" />
+        </property>
+        <property name="idno" type="string">
+            <column name="IDNO" length="20" />
+        </property>
+        <property name="score1" type="java.lang.Integer">
+            <column name="Score1" />
+        </property>
+        <property name="score2" type="java.lang.Integer">
+            <column name="Score2" />
+        </property>
+        <property name="score3" type="java.lang.Integer">
+            <column name="Score3" />
+        </property>
+        <property name="score4" type="java.lang.Integer">
+            <column name="Score4" />
+        </property>
+        <property name="answerList1" type="string">
+            <column name="AnswerList1" length="100" />
+        </property>
+        <property name="answerList2" type="string">
+            <column name="AnswerList2" length="100" />
+        </property>
+        <property name="answerList3" type="string">
+            <column name="AnswerList3" length="100" />
+        </property>
+        <property name="answerList4" type="string">
+            <column name="AnswerList4" length="1000" />
+        </property>
+        <property name="testDate" type="timestamp">
+            <column name="TestDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

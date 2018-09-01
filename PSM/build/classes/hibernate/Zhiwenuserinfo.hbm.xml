@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-19 17:45:20 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Zhiwenuserinfo" table="zhiwenuserinfo" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="enrollNumber" type="string">
+            <column name="EnrollNumber" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" />
+        </property>
+        <property name="privilege" type="string">
+            <column name="Privilege" />
+        </property>
+        <property name="enabled" type="string">
+            <column name="Enabled" />
+        </property>
+        <property name="ip" type="string">
+            <column name="ip" length="20" />
+        </property>
+        <property name="port" type="string">
+            <column name="port" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

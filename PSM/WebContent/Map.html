@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title></title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}  
+</style>  
+	<link rel="stylesheet" href="Extjs_4.2/resources/css/ext-all-neptune.css"/>
+	<script type="text/javascript" src="Extjs_4.2/bootstrap.js"></script>
+	<script type="text/javascript" src="Extjs_4.2/locale/ext-lang-zh_CN.js"></script>
+	<script src="Scripts/jQuery/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=kL7g9s9uiSvelw7ZPeiRe3yGWnnmqrnU&s=1">
+</script>
+</head>  
+
+<body>  
+<div id="container"></div> 
+<script type="text/javascript"> 
+	var map = new BMap.Map("container");          // 创建地图实例  
+	var point;
+	var mapstyle = true;
+	var scale = 18;                    //mor
+	var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';	//必填项红色星号*
+	var projectName = sessionStorage.projectName;
+	function getCenterPoint(){
+	Ext.Ajax.request({                            //获取中心点
+		async: false, 
+        method : 'POST',
+        url: encodeURI('MapAction!getCenterPoint'),
+        success: function(response){
+        	point = Ext.decode(response.responseText); //返回中心点
+        }
+     });
+	}
+	
+	getCenterPoint();
+	if(point.length == 0){
+		alert('请先设置中心点！');
+	}
+	
+	var centerPoint = new BMap.Point(point[0].longitude*1,point[0].latitude*1);  // 创建中心点坐标  
+	map.centerAndZoom(centerPoint, 18);                 // 初始化地图，设置中心点坐标和地图级别  
+	map.enableScrollWheelZoom(true);
+	
+	//添加监控点
+	var pointList;
+	Ext.Ajax.request({
+		async: false,
+        method : 'POST',
+        url: encodeURI('MapAction!setMonitorInMap?projectName=' + projectName),
+        success: function(response) {
+        	pointList = Ext.decode(response.responseText); //返回监控点列表
+        }
+     });
+	for( var i = 0; i < pointList.length; i++){            //添加监控点
+		var sContent =
+			"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>"+pointList[i].monitorName+"</h4>" + 
+		        "<p style='margin:0;line-height:1.5;font-size:13px;width:200px;text-indent:2em;'>"+pointList[i].remarks+"</p>" +  
+		        "<button onclick=\"Videomonitor("+pointList[i].ID+")\" >视频监控</button>&nbsp;&nbsp;" + 
+		        "<button onclick=\"showFingerprint("+pointList[i].ID+")\">指纹考勤</button>&nbsp;&nbsp;" + 
+		        "<button onclick=\"setCenter("+pointList[i].ID+")\">设为中心</button>"+
+			"</div>";
+		var pt = new BMap.Point(pointList[i].longitude*1,pointList[i].latitude*1);
+		var myIcon = new BMap.Icon("Images/map/bd_red.png", new BMap.Size(35,35));
+		myIcon.imageSize = new BMap.Size(35,35); 
+		var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+		addClickHandler(sContent,marker);
+		map.addOverlay(marker);              // 将标注添加到地图中
+	}
+	
+	/*******START***********为按钮添加点击事件***************************/
+	// 设为常用
+	function setCenter(id) {
+		$.ajax({
+			url: 'MapAction!setCenterPoint',
+			data: { ID : id },
+			success: function() {
+				Ext.Msg.alert('提示','设置成功！');
+			}
+		})
+	}
+
+	//视频监控
+	function Videomonitor(id) {
+		var url = '/PSM/Monitor/cn/demo.html?id=' + id
+		new Ext.Window({
+			title : '视频监控',
+			modal : true,
+			width : 1100,
+			height : 600,
+			layout : 'fit',
+			draggable : true,
+			resizeable : true,
+            maximizable: true,
+            constrain: true,
+			closeAction : 'hide',
+			html : "<iframe src='" + url + "' scrolling='yes' frameboder=0 width=100% height=100% ></iframe>"
+		}).show();
+	}
+	
+	// 指纹考勤
+	function showFingerprint(id) {
+		var forms;
+		var createFormKQ = function (config) {
+			forms = Ext.create('Ext.form.Panel', {
+	      		minWidth: 200,
+	      		minHeight: 100,
+	      		bodyPadding: config.bodyPadding,
+	            buttonAlign: 'center',
+	            layout: config.layout,
+	            defaults: config.defaults,
+	            autoScroll: true,
+	            frame: false,
+	            html: config.html,
+	            defaultType: config.defaultType,
+	            items: config.items,
+	            renderTo: Ext.getBody()
+	        });
+		};
+		
+		var showWinKQ = function (config) {
+			var width = 720;
+			var height = 720;
+			var defaultCng = {
+				modal: true,  //设定为模态窗口
+				plain: true,
+				width: width,
+				height: height,
+				layout: 'fit',
+				titleAlign: 'center',
+				closable: true,		//可关闭的
+				closeAction: 'close',	//关闭动作，有hide、close、destroy
+				draggable: true,
+				resizable: true,
+				maximizable: true,
+				constrain: true
+			};
+			config = $.extend(defaultCng, config);
+			var win = new Ext.Window(config);
+			win.show();
+			return win;
+		};
+		
+		var kaoQingStore = Ext.create('Ext.data.Store', {
+			fields: [
+				{ name: 'EnrollNumber'},
+					 
+					 { name: 'VerifyMode'},
+					 { name: 'InOutMode'},
+					 { name: 'Time'},
+					 //{ name: 'WorkCode'},
+					 { name: 'Name'}
+			],
+			// pageSize: psize,  //页容量20条数据
+			proxy: {
+				type: 'ajax',
+				url: encodeURI('DayManageAction!getAttLogListSearchByID?id=' + id),
+				reader: {   				//这里的reader为数据存储组织的地方，下面的配置是为json格式的数据，例如：[{"total":50,"rows":[{"a":"3","b":"4"}]}]
+					type: 'json', 			//返回数据类型为json格式
+					root: 'rows',  			//数据
+					totalProperty: 'total' 	//数据总条数
+				}
+			},
+			autoLoad: true 					//即时加载数据
+		});
+			
+		var gridKaoQing = Ext.create('Ext.grid.Panel', {       
+			selModel: { selType: 'checkboxmodel'},   //选择框
+			store: kaoQingStore,
+			stripeRows: true,
+			columnLines: true,
+			columns:  [
+				{ text: '序号',xtype: 'rownumberer',width: 40,sortable: false},		
+    		    { text: '用户编号', dataIndex: 'EnrollNumber', align: 'center', width: 150},
+  	            { text: '用户姓名', dataIndex: 'Name', align: 'center', width: 100},
+  	            { text: '验证方式', dataIndex: 'VerifyMode', align: 'center', width: 100},
+  	            { text: '考勤状态', dataIndex: 'InOutMode', align: 'center', width: 100},
+  	            { text: '考勤时间', dataIndex: 'Time', align: 'center', width: 200}
+			],
+			viewConfig: {
+				loadMask: false,
+				loadMask: {
+					msg: '正在加载数据中……'
+				}
+			}
+		});
+
+		createFormKQ({
+			autoScroll: true,
+			action: 'kaoQing',
+			bodyPadding: 5,
+			items: gridKaoQing
+		});	
+		//bbar.moveFirst();	//状态栏回到第一页
+		showWinKQ({ winId: 'kaoQing', title: '考勤记录', items: [forms]});
+	}
+	
+	function addClickHandler(content,marker){
+		marker.addEventListener("click",function(e){
+			var infoWindow = new BMap.InfoWindow(content);
+			this.openInfoWindow(infoWindow);
+		})
+	}
+	
+	
+	/********END*****************2017-06-12 zwj 修改*****************************/
+	
+	function returnCurrent(){
+		function myFun(result){
+			var cityName = result.name;
+			map.setCenter(cityName);
+			map.setZoom(11);
+		}
+		var myCity = new BMap.LocalCity();
+		myCity.get(myFun);
+	}
+	
+	
+	function choosePos(){
+	  var radiogroup = new Ext.form.RadioGroup({
+		//  fieldLabel: '性别',
+		  id : 'position',
+		  layout: 'anchor',
+		  width: 100,
+	      items: []
+		 });
+		for( var i = 0; i < pointList.length; i++){
+			radiogroup.add({
+				 name: 'position',
+				 longitude : pointList[i].longitude,
+				 latitude: pointList[i].latitude,
+				 boxLabel: pointList[i].monitorName,
+				
+			})
+		}
+		
+		forms = Ext.create('Ext.form.Panel', {
+			minWidth: 200,
+			minHeight: 100,
+			bodyPadding: 5,
+			buttonAlign: 'center',
+		    layout: 'anchor',
+	        defaults: { anchor: '100%', height: 30, labelWidth: 80 },
+	        autoScroll: true,
+	        frame: false,
+	        defaultType:'textfield',
+	        items:radiogroup,
+	        buttons: [{
+	        	text: '确定',
+	        	handler: function() {
+	        		var longitude = Ext.getCmp('position').getChecked()[0].longitude;
+	        		var latitude = Ext.getCmp('position').getChecked()[0].latitude;
+	        		map.panTo(new BMap.Point(longitude*1,latitude*1));
+	        		this.up('window').close();
+	        	}
+	        },{
+	        	text: '取消',
+	        	Align:'left',
+	        	handler: function(){
+	        		this.up('window').close();
+	        	}
+	        }],
+	        renderTo: Ext.getBody()
+	   })	
+	 
+		Ext.create('Ext.window.Window', {
+	        title: '监控点列表',
+	        height: 370,
+	        width: 240,
+	        modal: true,  //设定为模态窗口
+	        plain: true,
+	        layout: 'fit',
+	        titleAlign: 'center',
+	        closable: true,		//可关闭的
+	        closeAction: 'destroy',	//关闭动作，有hide、close、destory
+	        draggable: true,
+	        resizable: true,
+	        maximizable: true,
+	        constrain: true,
+	        items:forms
+	    }).show();
+	}
+
+	
+	//新增监控点
+	function addMonitor(p){
+		forms = Ext.create('Ext.form.Panel', {
+				minWidth: 200,
+				minHeight: 100,
+				bodyPadding: 5,
+				buttonAlign: 'center',
+			    layout: 'anchor',
+		        defaults: { anchor: '100%', height: 30, labelWidth: 80 },
+		        autoScroll: true,
+		        frame: false,
+		        defaultType:'textfield',
+		        items: [{
+			    	fieldLabel: "编号",		//编号框用于绑定数据ID，隐藏不显示
+			        name: "XH",
+			        labelAlign: 'right',
+			        hidden: true,
+			       	hiddenLabel: true
+		        },{
+		        	fieldLabel:"监控点名称:",
+		        	name:"monitorName",   
+		        	labelAlign: 'right',
+		        	allowBlank:false,
+		        	afterLabelTextTpl: required,
+			    },{
+		        	fieldLabel:"监控点经度:",
+		        	name:"longitude",   
+		        	labelAlign: 'right',
+		        	allowBlank:false,
+		        	afterLabelTextTpl: required,
+		        	value:p.lng
+			    },{       
+			    	fieldLabel: "监控点纬度:",
+			       	labelAlign: 'right',
+			        name:"latitude",
+			        allowBlank:false,
+			    	afterLabelTextTpl: required,
+			    	value:p.lat
+			    },{
+			        fieldLabel:"登录用户名:",
+			        name:"userName",
+			       	labelAlign: 'right',
+			       	allowBlank:false,
+			       	afterLabelTextTpl: required,
+			    },{
+			       	fieldLabel: "登录密码:",
+			       	name: "userPwd",
+			       	allowBlank:false,
+			       	labelAlign: 'right',
+			       	afterLabelTextTpl: required,
+			    },{
+			       	fieldLabel: "摄像机IP:",
+			       	name: "ipaddress",
+			       	allowBlank:false,
+			       	labelAlign: 'right',
+			       	afterLabelTextTpl: required,
+			    },{
+			       	fieldLabel: "端口号:",
+			       	name: "port",
+			       	allowBlank:false,
+			       	labelAlign: 'right',
+			       	afterLabelTextTpl: required,
+			    },{
+			       	fieldLabel: "摄像机频道:",
+			       	name: "channel",
+			       	allowBlank:false,
+			       	labelAlign: 'right',	
+			       	afterLabelTextTpl: required,
+			    },{	
+			    	fieldLabel: "备注:",
+				    xtype: 'textareafield',
+				    name:"remarks",
+					labelAlign: 'right',
+					style: 'margin:0',
+					height:90,
+				    flex:1
+			    }],
+		        buttons: [{
+		        	text: '确定',
+		        	handler: function() {
+		        		if(forms.form.isValid()){
+		        			forms.form.submit({
+		        				clientValidation: true,
+		        				url:encodeURI('MapAction!addMonitor?projectName=' + projectName),
+		  	                	success: function(form, action){
+		  	                	//var res = action.result.msg;
+		  	                	var longitude = forms.getForm().findField('longitude').getValue();
+		  	                	var monitorName = forms.getForm().findField('monitorName').getValue();
+		  	                	var latitude = forms.getForm().findField('latitude').getValue();
+		  	                	var remarks = forms.getForm().findField('remarks').getValue();
+		  	                	var sContent =
+		  	              		"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>"+monitorName+"</h4>" + 
+		  	              			"<p style='margin:0;line-height:1.5;font-size:13px;width:200px;text-indent:2em;'>"+remarks+"</p>" + 
+		  	              		 "<button>视频监控</button>&nbsp;&nbsp;<button>指纹考勤</button>&nbsp;&nbsp;<button id=\"setCenterBtn\"设为常用</button>"+
+		  	              		"</div>";
+		  	              		var pt = new BMap.Point(longitude,latitude);
+		  	              		var myIcon = new BMap.Icon("Images/map/bd_red.png", new BMap.Size(35,35));
+		  	              		myIcon.imageSize = new BMap.Size(35,35); 
+		  	              		var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+		  	              		addClickHandler(sContent,marker);
+		  	              		map.addOverlay(marker);              // 将标注添加到地图中
+		  	                		
+		  	                	},
+		  	                	failure: function(form, action){
+		  	                		alert("编辑失败！");
+		  	                	}
+		                	})
+		                	this.up('window').close();
+		                }
+		        		else{
+		        			Ext.Msg.alert('警告','请完善信息！');
+		        		}
+		                
+		        	}
+		        },{
+		        	text: '取消',
+		        	Align:'left',
+		        	handler: function(){
+		        		this.up('window').close();
+		        	}
+		        },{
+		        	text: '重置',
+		        	handler: function(){
+		        		forms.form.reset();
+		        	}
+		        }],
+		        renderTo: Ext.getBody()
+		   })	
+		 
+		Ext.create('Ext.window.Window', {
+            title: '新增监控点',
+            height: 500,
+            width: 400,
+            modal: true,  //设定为模态窗口
+            plain: true,
+            layout: 'fit',
+            titleAlign: 'center',
+            closable: true,		//可关闭的
+            closeAction: 'close',	//关闭动作，有hide、close、destory
+            draggable: true,
+            resizable: true,
+            maximizable: true,
+            constrain: true,
+            items:forms
+            }).show();
+	}
+ 
+	
+    // 添加右键菜单
+	var menu = new BMap.ContextMenu();
+    //添加分隔符
+	var txtMenuItem = [
+		{
+			text:'添加监控点',
+			
+			callback:function(p){
+				addMonitor(p);
+			},
+			opts:{
+				width:130,
+				iconUrl:'Images/ims/toolbar/add.gif'
+			}
+		},              
+		{
+			text:'返回中心点',
+			width:130,
+			callback:function(){
+				map.setZoom(18);
+				map.panTo(centerPoint);
+			},
+			opts:{
+				width:130,
+				iconUrl:'Images/ims/toolbar/process.png'
+			}
+		},
+		{
+			text:'返回当前位置',
+			callback:function(){returnCurrent()},
+			opts:{
+				width:130,
+				iconUrl:'Images/ims/toolbar/resubmit1.png'
+			}
+		},
+		{
+			text:'显示经纬度',
+			callback:function(p){				
+				Ext.Msg.alert('具体坐标','经度'+p.lng+'&nbsp;纬度:'+p.lat);
+			},
+			opts:{
+				width:130,
+				iconUrl:'Images/ims/toolbar/lock.png'
+			}
+		}
+		]
+		
+	for(var i=0; i < txtMenuItem.length; i++){
+		menu.addItem(new BMap.MenuItem(txtMenuItem[i].text,txtMenuItem[i].callback,txtMenuItem[i].opts));
+		menu.addSeparator(); 
+	}
+	map.addContextMenu(menu);
+	
+	
+	function posList(){
+		 this.defaultAnchor = BMAP_ANCHOR_BOTTOM_LEFT;
+		 this.defaultOffset = new BMap.Size(10, 200);
+	}
+			posList.prototype = new BMap.Control(); // 通过JavaScript的prototype属性继承于BMap.Control
+													// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+	    	posList.prototype.initialize = function(map){
+	 	 	var div = document.createElement("div"); 
+			var img = document.createElement("img"); 
+			img.setAttribute("id", "switchImg");
+			img.style.width = 30+"px";
+			img.style.height = 30+"px";
+			img.src = "Images/map/list.png";
+			div.appendChild(img);
+			div.style.cursor = "pointer";
+			div.onclick = function(e){
+				choosePos();
+			}
+			map.getContainer().appendChild(div);  //将div添加到Map容器中
+		    return div;
+		}
+	//添加切换卫星图控件
+	function switchSatellite(){
+		 this.defaultAnchor = BMAP_ANCHOR_BOTTOM_LEFT;
+		 this.defaultOffset = new BMap.Size(10, 150);
+	}
+		 switchSatellite.prototype = new BMap.Control(); // 通过JavaScript的prototype属性继承于BMap.Control
+													// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+		 switchSatellite.prototype.initialize = function(map){
+		 	var div = document.createElement("div"); 
+			var img = document.createElement("img"); 
+			img.setAttribute("id", "switchImg");
+			img.style.width = 30+"px";
+			img.style.height = 30+"px";
+			img.src = "Images/map/move_to_monitor_small.png";
+			div.appendChild(img);
+			div.style.cursor = "pointer";
+			div.onclick = function(e){
+				map.setMapType(mapstyle?BMAP_SATELLITE_MAP:BMAP_NORMAL_MAP);
+				mapstyle = !mapstyle;
+			}
+			map.getContainer().appendChild(div);  //将div添加到Map容器中
+		    return div;
+		}
+	
+	//添加显示当前位置控件
+	function currentPos(){
+		 this.defaultAnchor = BMAP_ANCHOR_BOTTOM_LEFT;
+		 this.defaultOffset = new BMap.Size(10, 100);
+	}
+	    currentPos.prototype = new BMap.Control();     // 通过JavaScript的prototype属性继承于BMap.Control
+		  // 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+		currentPos.prototype.initialize = function(map){
+			var div = document.createElement("div"); 
+			var img = document.createElement("img"); 
+			img.setAttribute("id", "currentImg");
+			img.style.width = 30+"px";
+			img.style.height = 30+"px";
+			img.src = "Images/map/currentPos.png";
+			div.appendChild(img);
+			div.style.cursor = "pointer";
+			div.onclick = function(e){
+				returnCurrent();
+			}
+			map.getContainer().appendChild(div);  //将div添加到Map容器中
+		    return div;
+		}	
+		function ZoomControl(){
+			  // 默认停靠位置和偏移量
+			  this.defaultAnchor = BMAP_ANCHOR_BOTTOM_LEFT;
+			  this.defaultOffset = new BMap.Size(10, 50);
+			}// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+		  ZoomControl.prototype = new BMap.Control();   // 通过JavaScript的prototype属性继承于BMap.Control
+		  // 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+	      ZoomControl.prototype.initialize = function(map){
+		  var div = document.createElement("div"); //创建一个div元素
+		  var img = document.createElement("img"); //创建一个img元素
+		  img.setAttribute("id", "zoomImg");
+		  img.style.width = 30+"px";
+		  img.style.height = 30+"px";
+		  img.src = "Images/map/tocenter.png";
+		  div.appendChild(img);
+		  div.style.cursor = "pointer";
+		  div.onclick = function(e){
+			getCenterPoint();
+			map.setZoom(18);
+			map.panTo(new BMap.Point(point[0].longitude*1,point[0].latitude*1));
+		  }
+		  map.getContainer().appendChild(div);  //将div添加到Map容器中
+		  return div;
+		}
+			
+   
+		var myZoomCtrl = new ZoomControl();  //创建控件
+		var myCurrentPos = new currentPos();
+		var mySwitchSatellite = new switchSatellite();
+		var myposList = new posList();
+		map.addControl(myposList);
+		map.addControl(mySwitchSatellite);
+		map.addControl(myZoomCtrl);// 添加到地图中
+		map.addControl(myCurrentPos);
+		
+</script>  
+</body>  
+</html>

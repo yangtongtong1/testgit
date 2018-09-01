@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-25 17:22:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Projectperson" table="projectperson" catalog="psm">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="job" type="string">
+            <column name="Job" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="100" />
+        </property>
+        <property name="duty" type="string">
+            <column name="Duty" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

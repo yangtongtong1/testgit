@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-23 15:22:22 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Managepara" table="managepara" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="content" type="string">
+            <column name="Content" length="50" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="20" />
+        </property>
+        <property name="quantity" type="string">
+            <column name="Quantity" length="10" />
+        </property>
+        <property name="unit" type="string">
+            <column name="Unit" length="20" />
+        </property>
+        <property name="state" type="string">
+            <column name="State" length="50" />
+        </property>
+        <property name="place" type="string">
+            <column name="Place" length="50" />
+        </property>
+        <property name="responsible" type="string">
+            <column name="Responsible" length="20" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="tableId" type="string">
+            <column name="TableID" length="20" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        <property name="fbunit" type="string">
+            <column name="Fbunit" length="20">
+                <comment>&#183;&#214;&#176;&#252;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

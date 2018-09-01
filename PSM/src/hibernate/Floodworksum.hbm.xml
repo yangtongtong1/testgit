@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-9 20:18:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Floodworksum" table="floodworksum" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="year" type="string">
+            <column name="Year" length="10">
+                <comment>&#196;&#234;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="bzperson" type="string">
+            <column name="Bzperson" length="20">
+                <comment>&#177;&#224;&#214;&#198;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="bztime" type="date">
+            <column name="Bztime" length="10">
+                <comment>&#177;&#224;&#214;&#198;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="spperson" type="string">
+            <column name="Spperson" length="20">
+                <comment>&#201;&#243;&#197;&#250;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="sptime" type="date">
+            <column name="Sptime" length="10">
+                <comment>&#201;&#243;&#197;&#250;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

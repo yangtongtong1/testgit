@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="psm" dynamic-insert="false" dynamic-update="false" mutable="true" name="hibernate.PrescribedActionView" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="prescribed_action_view">
+        <composite-id class="hibernate.PrescribedActionViewId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="project" type="string">
+                <column name="project"/>
+            </key-property>
+            <key-property name="actionId" type="java.lang.Integer">
+                <column name="action_id"/>
+            </key-property>
+            <key-property name="isDone" type="java.lang.Boolean">
+                <column name="is_done"/>
+            </key-property>
+            <key-property name="prescribedAction" type="string">
+                <column length="150" name="prescribed_action"/>
+            </key-property>
+            <key-property name="relatedMenu" type="string">
+                <column name="related_menu"/>
+            </key-property>
+            <key-property name="promptRole" type="string">
+                <column length="100" name="prompt_role"/>
+            </key-property>
+            <key-property name="promptCycle" type="string">
+                <column length="20" name="prompt_cycle"/>
+            </key-property>
+        </composite-id>
+        <property name="completedDate" type="timestamp">
+            <column length="19" name="completed_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

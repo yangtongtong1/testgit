@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-20 16:18:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Approval" table="approval" catalog="psm">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="approname" type="string">
+            <column name="approname" length="50" />
+        </property>
+        <property name="approtype" type="string">
+            <column name="approtype" length="20" />
+        </property>
+        <property name="approtime" type="date">
+            <column name="approtime" length="10" />
+        </property>
+        <property name="approexp" type="string">
+            <column name="approexp" length="300" />
+        </property>
+        <property name="approfile" type="string">
+            <column name="approfile" length="500" />
+        </property>
+        <property name="approperson" type="string">
+            <column name="approperson" length="20" />
+        </property>
+        <property name="approstate" type="string">
+            <column name="approstate" length="20" />
+        </property>
+        <property name="judgeperson" type="string">
+            <column name="judgeperson" length="20" />
+        </property>
+        <property name="view" type="string">
+            <column name="view" length="3000" />
+        </property>
+    </class>
+</hibernate-mapping>

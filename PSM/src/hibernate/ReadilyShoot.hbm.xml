@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated 2017-9-30 14:54:06 by Hibernate Tools 5.1.4.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="psm" dynamic-insert="false" dynamic-update="false" mutable="true" name="hibernate.ReadilyShoot" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="readily_shoot">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="url" optimistic-lock="true" type="string" unique="false">
+            <column name="url" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="position" optimistic-lock="true" type="string" unique="false">
+            <column name="position">
+				<comment>地点</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="comment" optimistic-lock="true" type="string" unique="false">
+            <column name="comment"/>
+        </property>
+        <property generated="never" lazy="false" name="uploadedBy" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="uploaded_by"/>
+        </property>
+        <property generated="never" lazy="false" name="uploadTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="upload_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="takeTime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="take_time"/>
+        </property>
+        <property generated="never" lazy="false" name="project" optimistic-lock="true" type="string" unique="false">
+            <column name="project" not-null="true">
+                <comment>项目部</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

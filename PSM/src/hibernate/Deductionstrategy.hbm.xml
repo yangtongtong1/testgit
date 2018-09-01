@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-15 10:23:36 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Deductionstrategy" table="deductionstrategy" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="item" type="string">
+            <column name="Item" length="50" />
+        </property>
+        <property name="score" type="string">
+            <column name="Score" length="10" />
+        </property>
+        <property name="cycle" type="string">
+            <column name="Cycle" length="20" />
+        </property>
+        <property name="start" type="string">
+            <column name="Start" length="50" />
+        </property>
+        <property name="relateTable" type="string">
+            <column name="RelateTable" length="50" />
+        </property>
+        <property name="relateFiled" type="string">
+            <column name="RelateFiled" length="50" />
+        </property>
+        <property name="includeFile" type="string">
+            <column name="IncludeFile" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

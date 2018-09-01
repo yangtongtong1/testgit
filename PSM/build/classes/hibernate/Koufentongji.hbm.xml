@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-25 10:53:15 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Koufentongji" table="koufentongji" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="proname" type="string">
+            <column name="proname" length="50" />
+        </property>
+        <property name="koufenitem" type="string">
+            <column name="koufenitem" length="500" />
+        </property>
+        <property name="koufenzhi" type="java.lang.Integer">
+            <column name="koufenzhi" />
+        </property>
+        <property name="zongfen" type="java.lang.Integer">
+            <column name="zongfen" />
+        </property>
+    </class>
+</hibernate-mapping>

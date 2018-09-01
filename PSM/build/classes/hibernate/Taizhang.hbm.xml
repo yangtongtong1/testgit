@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-29 16:51:11 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Taizhang" table="taizhang" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="no" type="java.lang.Integer">
+            <column name="No">
+                <comment>&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="checkId" type="java.lang.Integer">
+            <column name="CheckID" />
+        </property>
+        <property name="problem" type="string">
+            <column name="Problem" length="500" />
+        </property>
+        <property name="solveTime" type="date">
+            <column name="SolveTime" length="10">
+                <comment>&#189;&#226;&#190;&#246;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="solveAcc" type="string">
+            <column name="SolveAcc" length="500" />
+        </property>
+        <property name="solveExp" type="string">
+            <column name="SolveExp" length="500" />
+        </property>
+        <property name="solvePerson" type="string">
+            <column name="SolvePerson" length="20" />
+        </property>
+        <property name="expTime" type="date">
+            <column name="ExpTime" length="10" />
+        </property>
+        <property name="location" type="string">
+            <column name="Location" length="50" />
+        </property>
+        <property name="checkperson" type="string">
+            <column name="Checkperson" length="10" />
+        </property>
+        <property name="prolevel" type="string">
+            <column name="Prolevel" length="10" />
+        </property>
+        <property name="correction" type="string">
+            <column name="correction" length="65535" />
+        </property>
+        <property name="solvedep" type="string">
+            <column name="Solvedep" length="50" />
+        </property>
+        <property name="correctionfee" type="string">
+            <column name="correctionfee" length="20" />
+        </property>
+        <property name="supperson" type="string">
+            <column name="supperson" length="20" />
+        </property>
+        <property name="prevent" type="string">
+            <column name="prevent" length="65535" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

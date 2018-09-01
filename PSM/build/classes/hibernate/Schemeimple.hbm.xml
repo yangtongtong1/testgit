@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-22 16:37:09 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Schemeimple" table="schemeimple" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="no" type="string">
+            <column name="No" length="20">
+                <comment>&#183;&#189;&#176;&#184;&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="schemeName" type="string">
+            <column name="SchemeName">
+                <comment>&#215;&#168;&#207;&#238;&#202;&#169;&#185;&#164;&#183;&#189;&#176;&#184;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="supervise" type="string">
+            <column name="Supervise" length="200">
+                <comment>&#197;&#212;&#213;&#190;&#188;&#224;&#182;&#189;</comment>
+            </column>
+        </property>
+        <property name="acceptance" type="string">
+            <column name="Acceptance" length="200">
+                <comment>&#183;&#189;&#176;&#184;&#209;&#233;&#202;&#213;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+        <property name="jd" type="string">
+            <column name="Jd" length="20">
+                <comment>&#183;&#189;&#176;&#184;&#189;&#187;&#181;&#215;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

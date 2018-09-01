@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-27 17:52:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Menus" table="menus" catalog="psm">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="45" not-null="true" />
+        </property>
+        <property name="pid" type="int">
+            <column name="PID" not-null="true" />
+        </property>
+        <property name="ppid" type="int">
+            <column name="PPID" not-null="true" />
+        </property>
+        <property name="orderId" type="string">
+            <column name="OrderID" length="45" not-null="true" />
+        </property>
+        <property name="role" type="string">
+            <column name="ROLE" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

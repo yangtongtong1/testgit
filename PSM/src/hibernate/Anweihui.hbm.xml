@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-19 10:22:30 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Anweihui" table="anweihui" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="esorad" type="string">
+            <column name="Esorad" length="20" />
+        </property>
+        <property name="time" type="string">
+            <column name="Time" length="20" />
+        </property>
+        <property name="head" type="string">
+            <column name="Head" length="20" />
+        </property>
+        <property name="viceHead" type="string">
+            <column name="ViceHead" length="20" />
+        </property>
+        <property name="form" type="string">
+            <column name="Form" length="100" />
+        </property>
+        <property name="agency" type="string">
+            <column name="Agency" length="50" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

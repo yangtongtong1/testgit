@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-15 20:18:03 by Hibernate Tools 5.1.2.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Question" table="question" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="10" />
+        </property>
+        <property name="question" type="string">
+            <column name="Question" length="200" />
+        </property>
+        <property name="optionA" type="string">
+            <column name="OptionA" length="100" />
+        </property>
+        <property name="optionB" type="string">
+            <column name="OptionB" length="100" />
+        </property>
+        <property name="optionC" type="string">
+            <column name="OptionC" length="100" />
+        </property>
+        <property name="optionD" type="string">
+            <column name="OptionD" length="100" />
+        </property>
+        <property name="optionE" type="string">
+            <column name="OptionE" length="100" />
+        </property>
+        <property name="answer" type="string">
+            <column name="Answer" length="100" />
+        </property>
+        <property name="enable" type="java.lang.Boolean">
+            <column name="Enable" />
+        </property>
+        <property name="belongTo" type="string">
+            <column name="BelongTo" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>

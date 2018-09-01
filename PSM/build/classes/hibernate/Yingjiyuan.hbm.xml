@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-5 21:30:24 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Yingjiyuan" table="yingjiyuan" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="zuizhiname" type="string">
+            <column name="zuizhiname" length="50" />
+        </property>
+        <property name="bianzhiren" type="string">
+            <column name="bianzhiren" length="50" />
+        </property>
+        <property name="bianzhitime" type="date">
+            <column name="bianzhitime" length="10" />
+        </property>
+        <property name="shenheren" type="string">
+            <column name="shenheren" length="50" />
+        </property>
+        <property name="shenhetime" type="date">
+            <column name="shenhetime" length="10" />
+        </property>
+        <property name="pizhunren" type="string">
+            <column name="pizhunren" length="50" />
+        </property>
+        <property name="pizhuntime" type="date">
+            <column name="pizhuntime" length="10" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.PODgoods" table="podgoods" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="deliveryTime" type="string">
+            <column name="DeliveryTime" />
+        </property>
+        <property name="num" type="string">
+            <column name="Num" />
+        </property>
+        <property name="personName" type="string">
+            <column name="PersonName" />
+        </property>
+        <property name="department" type="string">
+            <column name="Department" />
+        </property>
+        <property name="timeLimit" type="string">
+            <column name="TimeLimit" />
+        </property>
+        <property name="autograph" type="string">
+            <column name="Autograph" />
+        </property>
+        <property name="comment" type="string">
+            <column name="Comment" length="65535" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

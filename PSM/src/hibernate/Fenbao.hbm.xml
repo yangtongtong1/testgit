@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-17 11:28:28 by Hibernate Tools 5.1.2.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Fenbao" table="fenbao" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="30">
+                <comment>&#183;&#214;&#176;&#252;&#181;&#165;&#206;&#187;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="proNo" type="string">
+            <column name="ProNo" length="20" />
+        </property>
+        <property name="proRange" type="string">
+            <column name="ProRange" length="200" />
+        </property>
+        <property name="cost" type="string">
+            <column name="Cost" length="20" />
+        </property>
+        <property name="head" type="string">
+            <column name="Head" length="200" />
+        </property>
+        <property name="rank" type="string">
+            <column name="Rank" length="10" />
+        </property>
+        <property name="techHead" type="string">
+            <column name="TechHead" length="200" />
+        </property>
+        <property name="proHead" type="string">
+            <column name="ProHead" length="200" />
+        </property>
+        <property name="proTechHead" type="string">
+            <column name="ProTechHead" length="200" />
+        </property>
+        <property name="proSaveHead" type="string">
+            <column name="ProSaveHead" length="200" />
+        </property>
+        <property name="proSavePeople" type="string">
+            <column name="ProSavePeople" length="200" />
+        </property>
+        <property name="project" type="string">
+            <column name="Project">
+                <comment>&#207;&#238;&#196;&#191;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

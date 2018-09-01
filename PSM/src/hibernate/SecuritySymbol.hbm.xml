@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-28 15:40:52 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.SecuritySymbol" table="securitysymbol">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="num" type="java.lang.String">
+            <column name="Num" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="Department" />
+        </property>
+        <property name="installTime" type="java.lang.String">
+            <column name="InstallTime" />
+        </property>
+        <property name="installPlace" type="java.lang.String">
+            <column name="InstallPlace" />
+        </property>
+        <property name="responsibility" type="java.lang.String">
+            <column name="Responsibility" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

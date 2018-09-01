@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-13 17:12:05 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Commonsystem" table="commonsystem" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="sendDate" type="date">
+            <column name="SendDate" />
+        </property>
+        <property name="receiveDate" type="date">
+            <column name="ReceiveDate" />
+        </property>
+        <property name="no" type="string">
+            <column name="No" length="20" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="200" />
+        </property>
+        <property name="fromUnit" type="string">
+            <column name="FromUnit" length="100" />
+        </property>
+        <property name="urgency" type="string">
+            <column name="Urgency" length="32" />
+        </property>
+        <property name="requirement" type="string">
+            <column name="Requirement" />
+        </property>
+        <property name="opinion" type="string">
+            <column name="Opinion" length="512" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

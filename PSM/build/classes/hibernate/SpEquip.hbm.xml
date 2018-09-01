@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 10:46:54 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.SpEquip" table="sp_equip" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name">
+                <comment>&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="type">
+                <comment>&#208;&#205;&#186;&#197;&#188;&#176;&#185;&#230;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="purpose" type="string">
+            <column name="purpose">
+                <comment>&#211;&#195;&#205;&#190;</comment>
+            </column>
+        </property>
+        <property name="inDate" type="string">
+            <column name="in_date" length="50">
+                <comment>&#189;&#248;&#179;&#161;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="outDate" type="string">
+            <column name="out_date" length="50">
+                <comment>&#179;&#246;&#179;&#161;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="registNo" type="string">
+            <column name="regist_no">
+                <comment>&#179;&#181;&#197;&#198;&#186;&#197;/&#202;&#185;&#211;&#195;&#181;&#199;&#188;&#199;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="kind" type="string">
+            <column name="kind">
+                <comment>&#201;&#232;&#177;&#184;&#214;&#214;&#192;&#224;</comment>
+            </column>
+        </property>
+        <property name="manuUnit" type="string">
+            <column name="manu_unit">
+                <comment>&#214;&#198;&#212;&#236;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="purchaseDate" type="string">
+            <column name="purchase_date" length="50">
+                <comment>&#185;&#186;&#214;&#195;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="installUnit" type="string">
+            <column name="install_unit">
+                <comment>&#176;&#178;&#215;&#176;&#181;&#165;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="checkStatus" type="string">
+            <column name="check_status">
+                <comment>&#188;&#236;&#209;&#233;&#202;&#177;&#188;&#228;&#188;&#176;&#199;&#233;&#191;&#246;</comment>
+            </column>
+        </property>
+        <property name="useStatus" type="string">
+            <column name="use_status">
+                <comment>&#202;&#185;&#211;&#195;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="majorStatus" type="string">
+            <column name="major_status">
+                <comment>&#214;&#216;&#180;&#243;&#206;&#172;&#208;&#222;&#199;&#233;&#191;&#246;</comment>
+            </column>
+        </property>
+        <property name="otherStatus" type="string">
+            <column name="other_status">
+                <comment>&#198;&#228;&#203;&#251;&#177;&#228;&#184;&#252;&#199;&#233;&#191;&#246;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

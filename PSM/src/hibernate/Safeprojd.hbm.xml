@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-17 18:33:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Safeprojd" table="safeprojd" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="person" type="string">
+            <column name="Person" length="100">
+                <comment>&#189;&#187;&#181;&#215;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="jdperson" type="string">
+            <column name="Jdperson" length="100">
+                <comment>&#189;&#187;&#181;&#215;&#182;&#212;&#207;&#243;</comment>
+            </column>
+        </property>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#189;&#187;&#181;&#215;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

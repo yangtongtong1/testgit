@@ -1,0 +1,30 @@
+div.singleFile {
+	float: left;
+	padding: 8px 17px;
+	margin: 5px;
+	margin: 10px 0 0 25px;
+	text-align: center;
+	line-height: 14px;
+	color: #333;
+	font-size: 10px;
+	font-family: "Helvetica Neue",sans-serif;
+	height: 200px;
+	width: 160px;
+	overflow: hidden;
+	border-top: 1px solid transparent;
+	cursor: pointer;
+}
+
+div.singleFile img {
+	max-height: 128px;
+	max-width: 128px;
+	margin-bottom: 10px;
+}
+
+div.singleFile-hover {
+	background-color: #eee;
+}
+
+.x-item-selected {
+	background-color:#D3E1F1 !important;
+}

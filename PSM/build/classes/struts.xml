@@ -1,0 +1,106 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant value="100000000" name="struts.multipart.maxSize"/>
+	<constant value="/tmp" name="struts.multipart.saveDir"/>
+	<constant value="true" name="struts.enable.DynamicMethodInvocation"/>
+	<!-- 声明包 -->
+    <package name="myPackage" extends="struts-default" namespace="/">
+    	<!-- 定义action -->
+    	
+<!--*******************************************************************************************--> 
+    	<action name="MenuAction_*" class="MenuAction" method="{1}">
+    		<!-- 处理成功的映射页面 -->
+    		<result name="success"></result>
+    		<result name="getRootMenu">HomePage.jsp</result>
+    		<result name="failer">error.jsp</result>
+    	</action>
+    	
+    	
+    	<!--  余明星修改   -->
+    	<action name="UserLoginAction" class="LoginAction">
+    		<result name="UserLogin" type="chain">MenuAction_all</result>
+    		<result name="UserLogin_prject" type="chain">MenuAction_login</result>
+    		<result name="Query"></result>
+    		<result name="AddAdmin"></result>
+    		<result name="EditAdmin"></result>
+    		<result name="failer">error.jsp</result>
+    	</action>
+    	
+    	<action name="UploadAction" class="UploadAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="BasicInfoAction" class="BasicInfoAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="LogAction" class="LogAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="GoalDutyAction" class="GoalDutyAction">
+    		<result name="success"></result>
+    	</action>
+    	
+	
+		<action name="FileSystemAction" class="FileSystemAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="OperationControlAction" class="OperationControlAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	
+    	<action name="SaftyCostAction" class="SaftyCostAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="HiddenTroubleSolutionAction" class="HiddenTroubleSolutionAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="SaftyCkeckAction" class="SaftyCkeckAction">
+    		<result name="success"></result>
+    	</action>
+    	
+		<action name="MapAction" class="MapAction">
+    		<result name="success"></result>
+    	</action>
+    	<action name="MissionAction" class="MissionAction">
+    		<result name="success"></result>
+    	</action>
+    	<action name="DayManageAction" class="DayManageAction">
+    		<result name="success"></result>
+    	</action>
+    	
+    	<action name="EduTrainAction" class="EduTrainAction">
+      		<result name="success"></result>
+    		<result name="test">/TestPage.jsp</result>
+    		<result name="testlogin">/TestEntrance.jsp</result>
+    		<result name="testreview">/TestReview.jsp</result>
+		</action>
+        
+        <action name="EmeRescueAction" class="EmeRescueAction">
+            <result name="success"></result>
+        </action>
+        
+        <action name="TestEntrance">
+            <result name="success">/TestEntrance.jsp</result>
+        </action>
+        
+        <action name="OperaConAction" class="OperaConAction">
+			<result name="success"></result>
+		</action>
+		
+		<action name="RunControlAction" class="RunControlAction">
+			<result name="success"></result>
+		</action>
+
+    </package>
+</struts>

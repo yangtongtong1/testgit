@@ -1,0 +1,154 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑", arial, sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 275px;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+#header nav #listViewBtn {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+#header nav ul {
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    height: 100%;
+    float: left;
+}
+
+    #header nav ul li {
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+#header, #outer-header {
+    height: 35px;
+    min-width: 1024px;
+    /*background: #1877b6;*/
+    
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #1877b6 0%, #146da7 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom/*, color-stop(0%, #1877b6), color-stop(100%, #146da7)*/);
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #1877b6 0%, #146da7 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #1877b6 0%, #146da7 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #1877b6 0%, #146da7 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #1877b6 0%, #146da7 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1877b6', endColorstr='#146da7',GradientType=0 );
+    /* IE6-9 */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#outer-header {
+    -webkit-box-shadow: 0 3px 5px #bcbdbf;
+    -moz-box-shadow: 0 3px 5px #bcbdbf;
+    box-shadow: 0 3px 5px #bcbdbf;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+
+#header {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+    #header nav {
+        height: 100%;
+    }
+    
+
+.nav {
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    vertical-align: middle;
+    /*color: #FFF;*/
+    
+    font-size: 16px;
+    border-left: 1px solid #4285b1;
+    border-right: 1px solid #005b98;
+    cursor: pointer;
+	text-align:center;
+}
+
+/*#nav-1, #nav-2, #nav-3, #nav-4, #nav-5, #nav-6, #nav-7,#nav-8, #nav-9, #nav-10  {
+    float: left;
+    width: 22px;
+    height: 35px;
+
+
+
+}*/
+
+
+
+/*--- Search BOX----*/
+
+
+/*--- DW Logo----*/
+.jjpro-header{
+	
+	/*background-color:#102947;*/
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	height:60px;
+	padding-top:0px;
+	
+	}
+.jjpro-header .jjpro-logos{
+	float:left;
+	height:50px;}
+.jjpro-header .jjpro-nav{
+	font-size:12px;
+	width:500px;
+	float:right;
+	margin-top:5px;
+	margin-right:20px;
+
+}
+.jjpro-header .jjpro-nav li{
+	float:right;
+	margin-left:10px;
+
+}
+.jjpro-header .jjpro-nav li a {
+	line-height: 11px;
+    /*color: #B9CCDA;*/
+	
+
+}

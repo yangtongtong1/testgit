@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-17 18:33:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Safepromonitor" table="safepromonitor" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="bzperson" type="string">
+            <column name="Bzperson" length="100">
+                <comment>&#177;&#224;&#214;&#198;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="bztime" type="date">
+            <column name="Bztime" length="10">
+                <comment>&#177;&#224;&#214;&#198;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="shperson" type="string">
+            <column name="Shperson" length="100">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="shtime" type="date">
+            <column name="Shtime" length="10">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="pzperson" type="string">
+            <column name="Pzperson" length="100">
+                <comment>&#197;&#250;&#215;&#188;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="pztime" type="date">
+            <column name="Pztime" length="10">
+                <comment>&#197;&#250;&#215;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500">
+                <comment>&#184;&#189;&#188;&#254;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

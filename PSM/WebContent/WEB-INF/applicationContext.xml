@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	
+	<import resource="scheduler.xml"/>
+	
+	
+	<!-- 配置数据源 -->
+	
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<!-- 		<property name="url" value="jdbc:mysql://125.220.159.160:3306/psm?useUnicode=true&amp;characterEncoding=utf8"></property>        -->
+<property name="url" value="jdbc:mysql://125.220.159.160:3306/psm?useUnicode=true&amp;characterEncoding=utf8"></property>   
+		<property name="username" value="root"></property>
+		<property name="password" value="rat605"></property>
+	 <!--    <property name="initialSize" value="10"></property>	-->	
+		<property name="maxActive" value="500"></property>
+		<property name="maxIdle" value="100"></property>
+		<property name="maxWait" value="10000" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="60" />
+        <property name="logAbandoned" value="true" />
+        <property name="validationQuery" value="select 1" />
+	<!--  	<property name="minIdle" value="10"></property>  
+		<property name="testWhileIdle" value="true" ></property> 
+		<property name="timeBetweenEvictionRunsMillis" value="3000000"></property>  
+		<property name="minEvictableIdleTimeMillis" value="3200000"></property>
+		<property name="removeAbandoned" value="true"></property>
+		<property name="removeAbandonedTimeout" value="7200"></property>		
+		<property name="defaultAutoCommit" value="true"></property>  -->
+	</bean>
+	
+	<!--  
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://125.220.159.160:3306/gxgl?useUnicode=true&amp;characterEncoding=utf8
+			</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>rat605</value>
+		</property>		
+	</bean>
+	-->
+	<!-- 定义Hibernate的sessionFactory -->
+	<!-- 定义Hibernate的sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- 数据库连接方言 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<!-- 在控制台输出SQL语句 -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 格式化控制台输出的SQL语句 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+			</props>
+		</property>
+		<!--Hibernate映射文件 -->
+		<property name="mappingLocations">
+			<value>classpath:/hibernate/*.hbm.xml</value>
+		</property>
+	</bean>
+	
+	<!-- spring管理struct -->
+	
+	
+	
+	<bean id="LoginAction" class="PSM.Action.LoginAction">
+		<property name="loginDAO">
+			<ref local="LoginDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="LogAction" class="PSM.Action.LogAction">
+		<property name="logDAO">
+			<ref local="LogDAO"/>
+		</property>
+	</bean>
+	
+    <bean id="MenuAction" class="PSM.Action.MenuAction">
+		<property name="menuDAO">
+			<ref local="MenuDAO"/>
+		</property>
+	</bean>  
+	
+	<bean id="UploadAction" class="PSM.Action.UploadAction">
+	
+	</bean> 
+	
+	<bean id="BasicInfoAction" class="PSM.Action.BasicInfoAction">
+		<property name="basicInfoService">
+			<ref local="BasicInfoService"/>
+		</property>
+		<property name="loginDAO">
+			<ref local="LoginDAO"/>
+		</property>
+		<property name="goalDutyService">
+			<ref local="GoalDutyService"/>
+		</property>
+		<property name="fileSystemService">
+			<ref local="FileSystemService"/>
+		</property>
+		<property name="saftyCostService">
+			<ref local="SaftyCostService"/>
+		</property>
+		<property name="saftyCheckService">
+			<ref local="SaftyCheckService"/>
+		</property>
+		<property name="operationControlService">
+			<ref local="OperationControlService"/>
+		</property>
+		<property name="emeRescueService">
+			<ref local="EmeRescueService"/>
+		</property>
+		<property name="basicInfoDAO">
+			<ref local="BasicInfoDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="MissionAction" class="PSM.Action.MissionAction">
+		<property name="missionService">
+			<ref local="MissionService"/>
+		</property>
+	</bean>
+	<bean id="GoalDutyAction" class="PSM.Action.GoalDutyAction">
+		<property name="goalDutyService">
+			<ref local="GoalDutyService"/>
+		</property>
+	</bean> 
+	
+	<bean id="FileSystemAction" class="PSM.Action.FileSystemAction">
+		<property name="fileSystemService">
+			<ref local="FileSystemService"/>
+		</property>
+	</bean>
+	
+	<bean id="OperationControlAction" class="PSM.Action.OperationControlAction">
+		<property name="operationControlService">
+			<ref local="OperationControlService"/>
+		</property>
+		
+		<property name="operationControlDAO">
+			<ref local="OperationControlDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="EduTrainAction" class="PSM.Action.EduTrainAction">
+		<property name="eduTrainService">
+			<ref local="EduTrainService"/>
+		</property>
+	</bean>
+	
+	<bean id="EmeRescueAction" class="PSM.Action.EmeRescueAction">
+		<property name="emeRescueService">
+			<ref local="EmeRescueService"/>
+		</property>
+	</bean>
+	
+	<bean id="SaftyCostAction" class="PSM.Action.SaftyCostAction">
+		<property name="saftyCostService">
+			<ref local="SaftyCostService" />
+		</property>
+	</bean>
+	
+	<bean id="HiddenTroubleSolutionAction" class="PSM.Action.HiddenTroubleSolutionAction">
+		<property name="hiddenTroubleSolutionService">
+			<ref local="HiddenTroubleSolutionService" />
+		</property>
+	</bean>
+	
+	<bean id="SaftyCkeckAction" class="PSM.Action.SaftyCkeckAction">
+		<property name="saftyCheckService">
+			<ref local="SaftyCheckService" />
+		</property>
+	</bean>
+	
+	<bean id="MapAction" class="PSM.Action.MapAction">
+		<property name="mapService">
+			<ref local="MapService"/>
+		</property>
+	</bean>
+	
+	<bean id="DayManageAction" class="PSM.Action.DayManageAction">
+		<property name="dayManageService">
+			<ref local="DayManageService"/>
+		</property>
+	</bean>
+	
+	<bean id="RunControlAction" class="PSM.Action.RunControlAction">
+		<property name="runControlService">
+			<ref local="RunControlService"/>
+		</property>
+		<property name="runControlDAO">
+			<ref local="RunControlDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="OperaConAction" class="PSM.Action.OperaConAction">
+		<property name="operaConService">
+			<ref local="OperaConService"/>
+		</property>
+	</bean>
+	
+	<!-- service -->
+	
+	<bean id="BasicInfoService" class="PSM.Service.BasicInfoService">
+		<property name="basicInfoDAO">
+			<ref local="BasicInfoDAO"/>
+		</property>
+		<property name="goalDutyDAO">
+			<ref local="GoalDutyDAO"/>
+		</property>
+		<property name="missionDAO">
+			<ref local="MissionDAO"/>
+		</property>
+		<property name="saftyCheckService">
+			<ref local="SaftyCheckService" />
+		</property>
+	</bean>
+	<bean id="MissionService" class="PSM.Service.MissionService">
+		<property name="missionDAO">
+			<ref local="MissionDAO"/>
+		</property>
+		<property name="basicInfoDAO">
+			<ref local="BasicInfoDAO"/>
+		</property>
+	</bean>
+	<bean id="GoalDutyService" class="PSM.Service.GoalDutyService">
+		<property name="goalDutyDAO">
+			<ref local="GoalDutyDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="FileSystemService" class="PSM.Service.FileSystemService">
+		<property name="fileSystemDAO">
+			<ref local="FileSystemDAO"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="OperationControlService" class="PSM.Service.OperationControlService">
+		<property name="operationControlDAO">
+			<ref local="OperationControlDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="EduTrainService" class="PSM.Service.EduTrainService">
+		<property name="eduTrainDAO">
+			<ref local="EduTrainDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="EmeRescueService" class="PSM.Service.EmeRescueService">
+		<property name="emeRescueDAO">
+			<ref local="EmeRescueDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="SaftyCostService" class="PSM.Service.SaftyCostService">
+		<property name="saftyCostDAO">
+			<ref local="SaftyCostDAO" />
+		</property>
+	</bean>
+	
+	<bean id="HiddenTroubleSolutionService" class="PSM.Service.HiddenTroubleSolutionService">
+		<property name="hiddenTroubleSolutionDAO">
+			<ref local="HiddenTroubleSolutionDAO" />
+		</property>
+	</bean>
+	
+	<bean id="SaftyCheckService" class="PSM.Service.SaftyCheckService">
+		<property name="saftyCheckDAO">
+			<ref local="SaftyCheckDAO" />
+		</property>
+	</bean>
+	
+	<bean id="MapService" class="PSM.Service.MapService">
+		<property name="mapDAO">
+			<ref local="MapDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="DayManageService" class="PSM.Service.DayManageService">
+		<property name="dayManageDAO">
+			<ref local="DayManageDAO"/>
+		</property>
+		<property name="saftyCheckDAO">
+			<ref local="SaftyCheckDAO" />
+		</property>
+		<property name="eduTrainDAO">
+			<ref local="EduTrainDAO"/>
+		</property>
+		<property name="basicInfoDAO">
+			<ref local="BasicInfoDAO"/>
+		</property>
+		<property name="goalDutyDAO">
+			<ref local="GoalDutyDAO"/>
+		</property>
+		<property name="saftyCostDAO">
+			<ref local="SaftyCostDAO" />
+		</property>
+	</bean>
+	
+	<bean id="RunControlService" class="PSM.Service.RunControlService">
+		<property name="runControlDAO">
+			<ref local="RunControlDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="OperaConService" class="PSM.Service.OperaConService">
+		<property name="operaConDAO">
+			<ref local="OperaConDAO"/>
+		</property>
+	</bean>
+	
+	<!--  <bean id="PExcelService" class="BackGround.Service.PExcelService">
+		<property name="pAcceptDAO">
+			<ref local="PAcceptDAO"/>
+		</property>
+		<property name="reportFormDAO">
+			<ref local="ReportFormDAO"/>
+		</property>
+	</bean>-->
+	
+	<!-- DAO注入SessionFactory -->
+	
+	<bean id="MenuDAO" class="PSM.DAO.MenuDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="LoginDAO" class="PSM.DAO.LoginDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="LogDAO" class="PSM.DAO.LogDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="MissionDAO" class="PSM.DAO.MissionDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	<bean id="BasicInfoDAO" class="PSM.DAO.BasicInfoDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="GoalDutyDAO" class="PSM.DAO.GoalDutyDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="FileSystemDAO" class="PSM.DAO.FileSystemDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="OperationControlDAO" class="PSM.DAO.OperationControlDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="EduTrainDAO" class="PSM.DAO.EduTrainDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="EmeRescueDAO" class="PSM.DAO.EmeRescueDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="SaftyCostDAO" class="PSM.DAO.SaftyCostDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="HiddenTroubleSolutionDAO" class="PSM.DAO.HiddenTroubleSolutionDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="SaftyCheckDAO" class="PSM.DAO.SaftyCheckDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="MapDAO" class="PSM.DAO.MapDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="DayManageDAO" class="PSM.DAO.DayManageDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+	
+	<bean id="RunControlDAO" class="PSM.DAO.RunControlDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+			</property>
+	</bean>
+
+	<bean id="OperaConDAO" class="PSM.DAO.OperaConDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	
+	
+	
+</beans>

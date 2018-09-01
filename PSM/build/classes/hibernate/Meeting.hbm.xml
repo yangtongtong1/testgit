@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-29 15:10:45 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Meeting" table="meeting" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="time" type="date">
+            <column name="Time" length="10">
+                <comment>&#187;&#225;&#210;&#233;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="place" type="string">
+            <column name="Place" length="20">
+                <comment>&#187;&#225;&#210;&#233;&#181;&#216;&#181;&#227;</comment>
+            </column>
+        </property>
+        <property name="topic" type="string">
+            <column name="Topic" length="200">
+                <comment>&#187;&#225;&#210;&#233;&#214;&#247;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="host" type="string">
+            <column name="Host" length="10">
+                <comment>&#214;&#247;&#179;&#214;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="record" type="string">
+            <column name="Record" length="10">
+                <comment>&#188;&#199;&#194;&#188;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="participants" type="string">
+            <column name="Participants" length="100">
+                <comment>&#178;&#206;&#188;&#211;&#200;&#203;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="10" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

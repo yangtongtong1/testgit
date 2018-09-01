@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-20 16:18:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Missionstate" table="missionstate" catalog="psm">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="missionname" type="string">
+            <column name="missionname" length="500" />
+        </property>
+        <property name="progroup" type="string">
+            <column name="progroup" length="50" />
+        </property>
+        <property name="properson" type="string">
+            <column name="properson" length="20" />
+        </property>
+        <property name="isdown" type="string">
+            <column name="isdown" length="5" />
+        </property>
+        <property name="score" type="java.lang.Integer">
+            <column name="score" />
+        </property>        
+        <property name="releasetime" type="date">
+            <column name="releasetime" length="10" />
+        </property>
+        <property name="downtime" type="date">
+            <column name="downtime" length="10" />
+        </property>
+        <property name="expecttime" type="date">
+            <column name="expecttime" length="10" />
+        </property>
+        <property name="finishfile" type="string">
+            <column name="finishfile" length="512" />
+        </property>
+        <property name="missionfile" type="string">
+            <column name="missionfile" length="500" />
+        </property>
+        <property name="missiontype" type="string">
+            <column name="missiontype" length="50" />
+        </property>
+        <property name="subscore" type="java.lang.Integer">
+            <column name="subscore" />
+        </property>
+        <property name="finsituation" type="string">
+            <column name="finsituation" length="500" />
+        </property>
+        <property name="misexplain" type="string">
+            <column name="misexplain" length="500" />
+        </property>
+        <property name="releaseperson" type="string">
+            <column name="releaseperson" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-1-16 9:56:15 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Flownode" table="flownode" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="tableId" type="string">
+            <column name="TableID" length="20" />
+        </property>
+        <property name="stepNum" type="java.lang.Integer">
+            <column name="StepNum" />
+        </property>
+        <property name="orderNum" type="java.lang.Integer">
+            <column name="OrderNum" />
+        </property>
+        <property name="nodeName" type="string">
+            <column name="NodeName" length="50" />
+        </property>
+        <property name="nodeX" type="java.lang.Integer">
+            <column name="NodeX" />
+        </property>
+        <property name="nodeY" type="java.lang.Integer">
+            <column name="NodeY" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="50" />
+        </property>
+        <property name="duty" type="string">
+            <column name="Duty" length="500" />
+        </property>
+        <property name="phone" type="string">
+            <column name="Phone" length="20" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

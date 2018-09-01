@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>总承包项目安全管理系统</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="Extjs_4.2/resources/css/ext-all-neptune.css"/>
+<script type="text/javascript" src="Extjs_4.2/bootstrap.js"></script>
+<script type="text/javascript" src="Extjs_4.2/locale/ext-lang-zh_CN.js"></script>
+<script src="Scripts/JudgeIDcard.js"></script>
+<style type="text/css">
+.STYLE3 {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+.STYLE4 {
+	color: #FFFFFF;
+	font-family: "方正大黑简体";
+	font-size: 50px;
+}
+    #sug {
+        list-style:none;
+        border:solid 1px #000;
+        margin-left:0;
+        margin-top:0;
+        margin-bottom:0;
+        width:250px;
+        background:white;
+    }
+    #sug li {
+    	font-weight:normal;
+    	font-color:black;
+    	font-size:12px;
+        padding-left:2px;
+    }
+   
+    .select {
+        background-color:#09f;
+        color:#ffffff;
+        cursor:default;
+    }
+    #top{
+    	font-size: 18px;
+		line-height: 55px;
+		font-family: "宋体";
+		color: #626262;
+    }
+.inputWraper {
+	margin: 5px 0px; padding: 1px; border: 1px solid rgb(102, 102, 102); border-image: none; width: 230px; height: 30px; line-height: 30px;
+}
+.inputWraper input {
+	border: 0px currentColor; border-image: none; width: 100%; height: 30px; line-height: 30px;
+}
+html {
+	width:100%;height: 100%;
+}
+#container {
+	width:100%;height: 100%;
+}
+body > #container {
+	height: auto; min-height: 100%;
+}
+body {
+	text-align: center; color: rgb(255,255,255); font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif; font-size: 12px;
+	margin-left:0px;margin-top:0px;
+}
+#main_contaier {
+	height: 100%; margin-bottom: 54px;
+}
+#footer {
+	margin: auto; width: 710px; height: 90px; color: rgb(255, 255, 255); line-height: 25px; clear: both; font-family: "宋体"; font-size: 14px; max-width: 1280px; in-width: 780px;
+}
+body.greyBg {
+	background-color: rgb(255,255,255);width:100%;overflow:hidden;
+}
+
+table {	
+}
+.table {
+	width: 100%; text-align: center; font-size: 13px; border-collapse: collapse; background-color: rgb(255, 255, 255);
+}
+a:link {
+	color: rgb(0, 81, 151); text-decoration: none;
+}
+a:visited {
+	color: rgb(0, 81, 151); text-decoration: none;
+}
+a:hover {
+	
+}
+.closeTip {
+	width: 70px; padding-top: 0px; font-size: 13px; margin-left: 10px; float: left;
+}
+div.validateimg
+{
+}
+#loginBox {
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:auto;
+	margin-bottom:auto;
+	padding-right:0%;
+	width: 820px;
+	height: 370px;
+	padding-top: 0px;
+	background-image: url("Images/Login/loginbox2.png");
+	opacity:0.9;
+}
+#loginBtn {
+	background-position: 0px 0px; border: 0px currentColor; border-image: none; width: 82px; height: 81px; cursor: pointer; background-image: url("Images/Login/loginbtn3.png");
+}
+#loginInputBox {
+	border: 0px currentColor; border-image: none; width:62%; text-align: left; color: rgb(255, 255, 255); font-size: 18px; font-weight: bold; margin-right: 0%; margin-top:9%; vertical-align: middle; float: right; border-collapse: collapse;
+	font-family:微软雅黑;position:relative;top: 35px;
+}
+#loginInputBox td {
+	border: 0px solid currentColor; border-image: none;
+}
+#loginInputBox .label {
+	width: 100px; text-align: right; line-height: 30px; padding-right: 10px; display: inline-block;color:rgb(102,102, 102);
+}
+.inputWraper {
+	margin: 5px 0px; padding: 1px; border: 1px solid rgb(102, 102, 102); border-image: none; width: 230px; height: 30px; line-height: 30px;
+}
+.inputWraper input {
+	border: 0px currentColor; border-image: none; width: 100%; height: 30px; line-height: 30px;
+}
+</style>
+</head>
+<script>
+	var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';	//必填项红色星号*
+	 if(this.parent!=this) this.parent.location.href="login.jsp";	
+     function login(){
+           return validate();
+      }
+        function validate(){
+           var username = document.getElementById("username").value; 
+           var password = document.getElementById("password").value;   
+		   var validate = document.getElementById("validate").value;
+           if(username.length == 0)
+           {
+           		alert("用户名不能为空!");
+           		return false;
+           }
+           else if(password.length == 0)
+           {
+           		alert("密码不能为空!");
+           		return false;
+           } 
+           else if(validate.length == 0)
+           {
+           		alert("验证码不能为空!");
+           		return false;
+           } 
+            else if(!IsValid(username)||!IsValid(password))
+           {
+            alert("请不要输入非法字符！");
+           return false;
+           } 
+             
+           else
+           		document.getElementById("UserLogin").submit();
+      }
+</script>
+
+<body class="greyBg" onresize="mydiv_resize()">
+<form name="UserLogin" id="UserLogin" enctype="multipart/form-data" action="UserLoginAction" method="post">  	   
+
+<div style="width:100%;height:100%;position:absolute;z-index:-1;top:0px;">
+<img src="Images/Login/loginbg111.jpg" width="100%" height="100%" >
+</div> 
+<DIV id="mydiv"></DIV>
+<DIV id="main_contaier">
+
+<DIV id="loginBox">
+<TABLE id="loginInputBox">
+  <TBODY>
+  	<!-- <TR>
+    	<TD>
+      		<DIV class="label">类&nbsp;&nbsp;&nbsp;型：</DIV>
+     	</TD>
+    	<TD colspan="2">
+      		<DIV class="inputWraper">
+      			<select name="usertype" class="myInput" id="usertype"
+     				style="border: 0px currentColor; border-image: none; width: 100%; height: 100%; line-height: 100%; font-size:17px; font-family:微软雅黑;" tabindex="1">
+					<option value="-1"></option>
+					<option value="1">系统管理员</option>
+					<option value="2">院领导</option>
+					<option value="3">质安部管理员</option>
+					<option value="4">其他管理员</option>
+					<option value="5">项目部人员</option>	
+				</select>
+      		</DIV>
+      		<DIV id="suggest" style="display: none; position: absolute;"></DIV>
+      	</TD>
+      	
+     </TR> -->
+     
+	 <TR>
+	    <TD>
+	      <DIV class="label">用户名：</DIV></TD>
+	    <TD colspan="2">
+	      <DIV class="inputWraper"><INPUT id="username" name="UserName" type="text" tabindex="2" style="font-size:17px;
+		font-family:微软雅黑"></DIV>
+	      <DIV id="suggest" style="display: none; position: absolute;"></DIV>
+	    </TD>
+	    <TD rowspan="3">
+      		<BUTTON type="image" id="loginBtn" tabindex="5" onClick="return login();" value="" src="Images/Login/loginbtn3.png">
+     	</TD>
+	 </TR>
+ 
+	  <TR>
+	    <TD>
+	      <DIV class="label">密&nbsp;&nbsp;&nbsp;码：</DIV>
+	    </TD>
+	    <TD colspan="2">
+	      <DIV class="inputWraper">
+	      	<INPUT id="password" name="UserPwd" tabindex="3" type="password">
+	      </DIV>
+	     </TD>
+	   </TR>
+	   
+	  <TR>
+    	<TD>
+      		<DIV class="label">验证码：</DIV>
+      	</TD>
+    	<TD style="text-align: left;" colspan="2">
+      		<DIV class="inputWraper" style="width: 90px; float: left;"><INPUT name="validate" id="validate" tabindex="4" maxlength="4" style="font-size:17px;font-family:微软雅黑"></DIV>
+      		<DIV class="validateimg" style="margin: 4px; height: 34px; float: left;"><img src="ImageJsp.jsp" width="132" height="36"/></DIV>
+     	</TD>
+
+    	<TD>&nbsp;</TD>
+     </TR>
+     
+  <TR>
+    <TD>
+      <DIV class="label"></DIV><BR></TD>
+</TR>
+  <TR>
+    <TD style="text-align: center;" colspan="4"><BR><FONT color="red" style="font-size: 12px;"><LABEL 
+      id="alertp"></LABEL></FONT>
+    </TD>
+  </TR>
+      </TBODY>
+      
+      </TABLE>
+</DIV>
+</DIV>
+</form>  
+</body>
+
+<script type="text/javascript">
+var mydiv = document.getElementById("mydiv");  
+var mydiv_resize = function() {  
+    mydiv.style.height = (document.documentElement.clientHeight- 400)/ 2+ "px"; ;
+	mydiv.style.width =document.documentElement.clientWidth;
+}
+mydiv_resize();
+window.onload = function() { mydiv_resize(); };
+window.onresize = function() {mydiv_resize(); };
+</script>	
+</html>

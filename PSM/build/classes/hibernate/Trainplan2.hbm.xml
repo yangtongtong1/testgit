@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-31 17:15:04 by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Trainplan2" table="trainplan2" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="content" type="string">
+            <column name="Content" length="50" />
+        </property>
+        <property name="method" type="string">
+            <column name="Method" length="50" />
+        </property>
+        <property name="actDate" type="timestamp">
+            <column name="ActDate" length="19" />
+        </property>
+        <property name="registDate" type="timestamp">
+            <column name="RegistDate" length="19" />
+        </property>
+        <property name="funding" type="string">
+            <column name="Funding" length="20" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

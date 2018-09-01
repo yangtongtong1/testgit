@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.FireSafety" table="firesafety" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="100" />
+        </property>
+        <property name="model" type="string">
+            <column name="Model" length="100" />
+        </property>
+        <property name="num" type="string">
+            <column name="Num" length="100" />
+        </property>
+        <property name="department" type="string">
+            <column name="Department" length="100" />
+        </property>
+        <property name="acqDate" type="string">
+            <column name="AcqDate" length="100" />
+        </property>
+        <property name="changeDate" type="string">
+            <column name="ChangeDate" length="100" />
+        </property>
+        <property name="place" type="string">
+            <column name="Place" length="100" />
+        </property>
+        <property name="chargePerson" type="string">
+            <column name="ChargePerson" length="100" />
+        </property>
+        <property name="checkPeriodically" type="string">
+            <column name="CheckPeriodically" length="100" />
+        </property>
+        <property name="checkResult" type="string">
+            <column name="CheckResult" length="100" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-1-4 20:34:18 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Sanxiang" table="sanxiang" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="project" type="string">
+            <column name="project" length="50" />
+        </property>
+        <property name="sumnum" type="string">
+            <column name="sumnum" length="50" />
+        </property>
+        <property name="danwei" type="string">
+            <column name="danwei" length="50" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

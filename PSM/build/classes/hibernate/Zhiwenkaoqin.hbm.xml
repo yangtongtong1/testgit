@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-19 17:18:53 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Zhiwenkaoqin" table="zhiwenkaoqin" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="enrollNumber" type="string">
+            <column name="EnrollNumber" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" />
+        </property>
+        <property name="verifyMode" type="string">
+            <column name="VerifyMode" />
+        </property>
+        <property name="inOutMode" type="string">
+            <column name="InOutMode" />
+        </property>
+        <property name="time" type="string">
+            <column name="Time" />
+        </property>
+        <property name="ip" type="string">
+            <column name="IP" length="20" />
+        </property>
+        <property name="port" type="string">
+            <column name="Port" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 16:47:11 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="psm" dynamic-insert="false" dynamic-update="false" mutable="true" name="hibernate.PrescribedActionStatic" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="prescribed_action_static">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="prescribedAction" optimistic-lock="true" type="string" unique="false">
+            <column length="150" name="prescribed_action"/>
+        </property>
+        <property generated="never" lazy="false" name="relatedMenu" optimistic-lock="true" type="string" unique="false">
+            <column name="related_menu"/>
+        </property>
+        <property generated="never" lazy="false" name="promptRole" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="prompt_role"/>
+        </property>
+        <property generated="never" lazy="false" name="promptCycle" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="prompt_cycle"/>
+        </property>
+    </class>
+</hibernate-mapping>

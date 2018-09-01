@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-19 10:22:30 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Saveproduct" table="saveproduct" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="evaluateRate" type="string">
+            <column name="EvaluateRate" length="20">
+                <comment>????&#161;&#227;?????????</comment>
+            </column>
+        </property>
+        <property name="trainRate" type="string">
+            <column name="TrainRate" length="20">
+                <comment>
+                ?&#161;&#192;?&#161;&#232;?&#161;&#167;&#161;&#227;&#168;&#185;?&#161;&#167;&#161;&#164;?&#161;&#227;&#168;&#185;?????????&#161;&#227;&#161;&#227;????&#168;&#164;??????&#161;&#193;&#161;&#194;?????&#168;&#164;????</comment>
+            </column>
+        </property>
+        <property name="reformRate" type="string">
+            <column name="ReformRate" length="20">
+                <comment>&#161;&#227;????&#168;&#178;?&#168;&#178;??????????????</comment>
+            </column>
+        </property>
+        <property name="reachRate" type="string">
+            <column name="ReachRate" length="20">
+                <comment>????&#161;&#227;???&#161;&#193;??&#168;&#164;??????</comment>
+            </column>
+        </property>
+        <property name="examineRate" type="string">
+            <column name="ExamineRate" length="20">
+                <comment>
+                ?&#161;&#167;?&#168;&#168;???????????????????&#168;&#185;?&#161;&#164;??&#161;&#227;??????????&#168;&#174;?&#168;&#178;?&#161;&#227;???&#161;&#193;??</comment>
+            </column>
+        </property>
+        <property name="enviPassRate" type="string">
+            <column name="EnviPassRate" length="20">
+                <comment>?&#161;&#232;&#161;&#193;&#161;&#194;???&#168;&#180;?&#161;&#164;????????</comment>
+            </column>
+        </property>
+        <property name="bottomRate" type="string">
+            <column name="BottomRate" length="20">
+                <comment>
+                ?????????&#168;&#174;&#161;&#164;?????&#161;&#164;????&#161;&#232;??&#161;&#193;&#161;&#167;??&#161;&#227;???????????&#161;&#192;&#168;&#164;?????&#168;&#174;?&#168;&#178;?????&#161;&#193;??</comment>
+            </column>
+        </property>
+        <property name="sickPassRate" type="string">
+            <column name="SickPassRate" length="20">
+                <comment>
+                ?&#161;&#232;&#161;&#193;&#161;&#194;???&#168;&#180;?&#161;&#227;?????????????????&#161;&#227;?????????&#168;&#176;???&#168;&#164;???????&#161;&#194;???????&#168;&#176;???&#168;&#164;????????</comment>
+            </column>
+        </property>
+        <property name="checkRate" type="string">
+            <column name="CheckRate" length="20">
+                <comment>?????????&#161;&#227;????????&#161;&#193;&#161;&#194;???????????&#161;&#227;?????????&#168;&#172;??</comment>
+            </column>
+        </property>
+        <property name="workAcci" type="string">
+            <column name="WorkAcci" length="200">
+                <comment>
+                ?&#168;&#176;?&#161;&#232;???&#161;&#192;?&#168;&#172;?&#168;&#168;?????&#168;&#176;?&#168;&#172;???????&#168;&#170;?????????????&#168;&#174;???&#168;&#178;???&#161;&#236;????</comment>
+            </column>
+        </property>
+        <property name="prodAcci" type="string">
+            <column name="ProdAcci" length="200">
+                <comment>?&#168;&#178;?&#168;&#178;???&#168;&#162;??????????????????????</comment>
+            </column>
+        </property>
+        <property name="acciRate" type="string">
+            <column name="AcciRate" length="20">
+                <comment>?&#168;&#162;????????</comment>
+            </column>
+        </property>
+        <property name="fenBaoAcci" type="string">
+            <column name="FenBaoAcci" length="200">
+                <comment>&#161;&#164;?&#161;&#227;&#168;&#185;?????&#168;&#178;?&#168;&#178;????????????????????</comment>
+            </column>
+        </property>
+        <property name="disaster" type="string">
+            <column name="Disaster" length="200">
+                <comment>???&#161;&#194;??????&#161;&#227;??&#161;&#227;???????&#161;&#167;???????????&#168;&#170;???????&#161;&#167;?&#168;&#168;????????????</comment>
+            </column>
+        </property>
+        <property name="fireAcci" type="string">
+            <column name="FireAcci" length="200">
+                <comment>
+                ??&#161;&#227;??&#161;&#227;?????&#168;&#168;&#161;&#192;????????&#161;&#192;?????????&#161;&#236;20?&#168;&#176;??/???&#161;&#227;??????????????</comment>
+            </column>
+        </property>
+        <property name="jobEvent" type="string">
+            <column name="JobEvent" length="200">
+                <comment>?&#161;&#227;????????????</comment>
+            </column>
+        </property>
+        <property name="pollutEvent" type="string">
+            <column name="PollutEvent" length="200">
+                <comment>?&#161;&#227;????????????</comment>
+            </column>
+        </property>
+        <property name="behave" type="string">
+            <column name="Behave" length="200">
+                <comment>?????&#161;&#194;&#161;&#192;&#161;&#167;????&#161;&#192;&#161;&#167;????????&#161;&#192;&#161;&#167;????</comment>
+            </column>
+        </property>
+        <property name="timeYear" type="string">
+            <column name="TimeYear" length="10">
+                <comment>????&#161;&#227;????&#168;&#178;?&#168;&#178;?????&#168;&#166;?&#161;&#167;???????&#168;&#186;???&#168;&#186;&#161;&#164;?????????????</comment>
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="65535" />
+        </property>
+        <property name="type" type="string">
+            <column name="Type" length="20" />
+        </property>
+        <property name="management" type="string">
+            <column name="Management" length="20" />
+        </property>
+        <property name="contrl" type="string">
+            <column name="Contrl" length="20" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-1-5 16:50:03 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="hibernate.Log" table="log" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="UserName" length="100" />
+        </property>
+        <property name="action" type="string">
+            <column name="Action" length="128" />
+        </property>
+        <property name="role" type="string">
+            <column name="Role" length="50" />
+        </property>
+        <property name="logintime" type="timestamp">
+            <column name="Logintime" length="19" />
+        </property>
+        <property name="loginip" type="string">
+            <column name="Loginip" length="128" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

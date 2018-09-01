@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-18 10:04:40 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.SecureJobSlip" table="securejobslip" catalog="psm" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="workPlace" type="string">
+            <column name="WorkPlace" />
+        </property>
+        <property name="workContent" type="string">
+            <column name="WorkContent" />
+        </property>
+        <property name="workTime" type="string">
+            <column name="WorkTime" />
+        </property>
+        <property name="dangerSource" type="string">
+            <column name="DangerSource" />
+        </property>
+        <property name="principle" type="string">
+            <column name="Principle" />
+        </property>
+        <property name="workerNum" type="string">
+            <column name="WorkerNum" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="Accessory" length="65535" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="ProjectName" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
